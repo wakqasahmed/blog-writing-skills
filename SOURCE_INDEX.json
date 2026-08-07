@@ -1,0 +1,10 @@
+{
+  "GOOGLE-EEAT-01": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+  "GOOGLE-AICONTENT-01": "https://developers.google.com/search/blog/2023/02/google-search-and-ai-content",
+  "GOOGLE-CANON-01": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+  "GOOGLE-SNIPPET-01": "https://developers.google.com/search/docs/appearance/featured-snippets",
+  "GOOGLE-SCHEMA-01": "https://developers.google.com/search/docs/appearance/structured-data/article",
+  "W3C-WCAG-01": "https://www.w3.org/WAI/WCAG22/quickref/",
+  "FTC-ADSUB-01": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
+  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language"
+}
