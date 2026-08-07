@@ -6,5 +6,8 @@
   "GOOGLE-SCHEMA-01": "https://developers.google.com/search/docs/appearance/structured-data/article",
   "W3C-WCAG-01": "https://www.w3.org/WAI/WCAG22/quickref/",
   "FTC-ADSUB-01": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
-  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language"
+  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language",
+  "GOOGLE-QRG-01": "https://guidelines.raterhub.com/searchqualityevaluatorguidelines.pdf",
+  "TRUSTPROJECT-INDICATORS-01": "https://thetrustproject.org/trust-indicators/",
+  "SCHEMAORG-AUTHOR-01": "https://schema.org/author"
 }

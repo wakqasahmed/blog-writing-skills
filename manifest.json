@@ -2,9 +2,10 @@
   "name": "blog-writing-skill-pack",
   "version": "1.0.0",
   "last_reviewed": "2026-08-07",
-  "skill_count": 1,
+  "skill_count": 2,
   "skills": [
-    "00-blog-writing-guardrails"
+    "00-blog-writing-guardrails",
+    "10-eeat-credibility-signals"
   ],
-  "source_count": 8
+  "source_count": 11
 }
