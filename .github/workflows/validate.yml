@@ -27,4 +27,5 @@ jobs:
       - run: bash skills/03-structure-scannability/eval/run-eval.sh
       - run: bash skills/02-headlines-hooks/eval/run-eval.sh
       - run: bash skills/01-audience-topic-research/eval/run-eval.sh
+      - run: bash skills/14-visual-content-accessibility/eval/run-eval.sh
       - run: bash skills/16-measurement-content-performance/eval/run-eval.sh
