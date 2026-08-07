@@ -80,6 +80,11 @@ if missing_ref:
 if manifest.get("skill_count") != len(actual_skills):
     raise SystemExit(f"manifest.json skill_count is {manifest.get('skill_count')}, repo has {len(actual_skills)}")
 
+if plugin.get("version") != manifest.get("version"):
+    raise SystemExit(
+        f"plugin.json version is {plugin.get('version')!r}, manifest.json version is {manifest.get('version')!r}"
+    )
+
 source_index = json.loads((root / "SOURCE_INDEX.json").read_text())
 if manifest.get("source_count") != len(source_index):
     raise SystemExit(f"manifest.json source_count is {manifest.get('source_count')}, registry has {len(source_index)}")
