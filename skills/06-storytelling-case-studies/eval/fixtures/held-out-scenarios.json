@@ -1,79 +1,79 @@
 [
   {
     "id": "follow-01",
-    "type": "should_follow",
+    "expected": "follow",
     "scenario": "A blog post tells a named customer's story: their situation before adopting the product, the specific steps they took, and a result number confirmed against the customer's own reporting dashboard, with the customer's sign-off on the quote used.",
     "expected_gate": "Case-study structure and verifiable-specifics gate",
     "reasoning": "Problem/solution/result structure with a verified figure and customer-approved quote satisfies gate 3."
   },
   {
     "id": "follow-02",
-    "type": "should_follow",
+    "expected": "follow",
     "scenario": "A vendor-commissioned case study discloses near the story that the vendor whose product is featured also produced the post.",
     "expected_gate": "Customer-as-hero framing gate",
     "reasoning": "Discloses the vendor relationship as required when the vendor commissions the customer narrative."
   },
   {
     "id": "follow-03",
-    "type": "should_follow",
+    "expected": "follow",
     "scenario": "A post keeps the customer as the protagonist facing and resolving their own problem, with the vendor's product appearing only as the tool the customer used.",
     "expected_gate": "Customer-as-hero framing gate",
     "reasoning": "Customer stays in the hero position; vendor stays supporting, matching the framing gate."
   },
   {
     "id": "follow-04",
-    "type": "should_follow",
+    "expected": "follow",
     "scenario": "A comparison article (not a customer story) presents information in a plain reference table instead of forcing a narrative arc onto it.",
     "expected_gate": "Narrative-transportation applicability gate",
     "reasoning": "Reserves narrative framing for content where a story fits and avoids forcing an arc onto reference content."
   },
   {
     "id": "follow-05",
-    "type": "should_follow",
+    "expected": "follow",
     "scenario": "A case study cites a 'cut onboarding time by 40%' result and links to the underlying before/after data the customer provided, treating it as a substantiated claim rather than an informal remark.",
     "expected_gate": "Case-study structure and verifiable-specifics gate",
     "reasoning": "Comparative/result claim backed by pre-existing substantiation, not just a customer's offhand comment."
   },
   {
     "id": "violate-01",
-    "type": "would_violate",
+    "expected": "violates",
     "scenario": "A blog post invents a composite customer quote that 'captures the spirit' of several real users because no single user said anything quotable.",
-    "violated_gate": "Case-study structure and verifiable-specifics gate",
+    "violates_gate": "Case-study structure and verifiable-specifics gate",
     "reasoning": "Fabricating a plausible substitute quote instead of cutting the detail directly violates the no-fabrication rule."
   },
   {
     "id": "violate-02",
-    "type": "would_violate",
+    "expected": "violates",
     "scenario": "A case study states a customer 'saved 60% on costs' based on the customer's casual remark in a call, with no underlying data checked.",
-    "violated_gate": "Case-study structure and verifiable-specifics gate",
+    "violates_gate": "Case-study structure and verifiable-specifics gate",
     "reasoning": "Treats an informal remark as substantiation for a comparative/result claim without checking underlying data."
   },
   {
     "id": "violate-03",
-    "type": "would_violate",
+    "expected": "violates",
     "scenario": "A post argues that because narrative transportation increases persuasion, the author can round up or simplify uncertain statistics inside the story to make it flow better.",
-    "violated_gate": "Narrative-transportation applicability gate",
+    "violates_gate": "Narrative-transportation applicability gate",
     "reasoning": "Uses the transportation effect as license to skip claim verification, contradicting the gate's explicit limit."
   },
   {
     "id": "violate-04",
-    "type": "would_violate",
+    "expected": "violates",
     "scenario": "A vendor-authored customer success story is published with no disclosure that the vendor wrote or commissioned it, presented as if independently written.",
-    "violated_gate": "Customer-as-hero framing gate",
+    "violates_gate": "Customer-as-hero framing gate",
     "reasoning": "Fails to disclose the vendor relationship behind the narrative."
   },
   {
     "id": "violate-05",
-    "type": "would_violate",
+    "expected": "violates",
     "scenario": "A case study is published quoting a named customer's exact figures and title, but the customer was never shown the final draft or asked to approve the quotes used.",
-    "violated_gate": "Case-study structure and verifiable-specifics gate",
+    "violates_gate": "Case-study structure and verifiable-specifics gate",
     "reasoning": "Publishes a customer narrative without the subject's explicit approval of quotes and figures used."
   },
   {
     "id": "violate-06",
-    "type": "would_violate",
+    "expected": "violates",
     "scenario": "A marketing brief cites this skill's research basis as proof that switching a blog to storytelling format will double newsletter signups.",
-    "violated_gate": "Scope limit",
+    "violates_gate": "Scope limit",
     "reasoning": "Extends the cited research beyond what it measured (beliefs, character evaluation, reduced scrutiny) to an untested marketing-outcome claim."
   }
 ]

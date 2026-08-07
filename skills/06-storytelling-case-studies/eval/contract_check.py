@@ -34,8 +34,8 @@ for phrase in required_phrases:
 if not (root.parent / "00-blog-writing-guardrails" / "SKILL.md").is_file():
     errors.append("dependency skill 00-blog-writing-guardrails/SKILL.md not found")
 
-should_follow = [f for f in fixtures if f.get("type") == "should_follow"]
-would_violate = [f for f in fixtures if f.get("type") == "would_violate"]
+should_follow = [f for f in fixtures if f.get("expected") == "follow"]
+would_violate = [f for f in fixtures if f.get("expected") == "violates"]
 if len(should_follow) < 5:
     errors.append(f"expected at least 5 should_follow fixtures, found {len(should_follow)}")
 if len(would_violate) < 5:
@@ -43,7 +43,7 @@ if len(would_violate) < 5:
 
 gate_names = {h.split(". ", 1)[1] for h in required_headers}
 for fixture in fixtures:
-    key = "expected_gate" if fixture.get("type") == "should_follow" else "violated_gate"
+    key = "expected_gate" if fixture.get("expected") == "follow" else "violates_gate"
     gate = fixture.get(key)
     if gate not in gate_names:
         errors.append(f"fixture {fixture.get('id')} references unknown gate: {gate!r}")

@@ -1,0 +1,52 @@
+name: behavioral-eval
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  behavioral-eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run behavioral eval for every skill
+        env:
+          OCR_LLM_URL: ${{ vars.OCR_LLM_URL }}
+          OCR_LLM_MODEL: ${{ vars.OCR_LLM_MODEL }}
+          OCR_LLM_AUTH_TOKEN: ${{ secrets.OCR_LLM_AUTH_TOKEN }}
+        run: |
+          set -uo pipefail
+          failed_skills=()
+          for skill_dir in skills/*/; do
+            echo "== $skill_dir"
+            if python3 scripts/run-behavioral-eval.py "$skill_dir"; then
+              echo "PASS: $skill_dir"
+            else
+              echo "FAIL: $skill_dir"
+              failed_skills+=("$skill_dir")
+            fi
+          done
+
+          echo ""
+          echo "== Summary =="
+          if [ "${#failed_skills[@]}" -eq 0 ]; then
+            echo "All skills passed"
+            exit 0
+          fi
+          echo "Failed skills:"
+          for s in "${failed_skills[@]}"; do
+            echo "  - $s"
+          done
+          exit 1
