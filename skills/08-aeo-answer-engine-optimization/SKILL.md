@@ -7,7 +7,7 @@ last_reviewed: 2026-08-07
 
 # Answer Engine Optimization (AEO)
 
-Apply [`../00-blog-writing-guardrails/SKILL.md`](../00-blog-writing-guardrails/SKILL.md) first; its gates apply to every post before this skill's guidance.
+Apply `../00-blog-writing-guardrails/SKILL.md` first; its gates apply to every post before this skill's guidance.
 
 ## 1. Direct-answer gate
 - For every question the post targets, answer it in a short, self-contained statement — typically 40-60 words — placed immediately under the question's own heading, before any elaboration, caveats, or background; Google's own systems select and elevate a passage for a featured snippet or related-questions ("People Also Ask") group based on how well the page answers the query, and a scanning reader or extraction system must be able to lift that passage on its own. [GOOGLE-SNIPPET-01]

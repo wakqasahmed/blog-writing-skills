@@ -15,8 +15,7 @@ GATES = [
     {
         "header": "## 1. Plain-language self-edit gate",
         "phrases": [
-            "Write for the reader's task, not the writer's expertise",
-            "Define or cut jargon a general reader",
+            "Apply the plain-language and clarity gate in the guardrails skill",
         ],
     },
     {

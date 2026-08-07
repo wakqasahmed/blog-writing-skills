@@ -7,11 +7,10 @@ last_reviewed: 2026-08-07
 
 # Editing, Style, and Voice
 
-Apply [`../00-blog-writing-guardrails/SKILL.md`](../00-blog-writing-guardrails/SKILL.md) first; its gates apply to every post before this skill's guidance.
+Apply `../00-blog-writing-guardrails/SKILL.md` first; its gates apply to every post before this skill's guidance.
 
 ## 1. Plain-language self-edit gate
-- Write for the reader's task, not the writer's expertise: lead with what the reader needs, use short sentences and everyday words, and test drafts for clarity before publishing. [DIGITALGOV-PLAIN-01]
-- Define or cut jargon a general reader in the target audience would not already know; a plain-language rewrite must not remove technical precision the audience actually needs. [DIGITALGOV-PLAIN-01]
+- Apply the plain-language and clarity gate in the guardrails skill as a self-edit pass on the draft before publishing. [DIGITALGOV-PLAIN-01]
 
 ## 2. Cutting filler, hedging, and wordiness gate
 - Interrogate every word in a sentence and remove or replace any word that does not contribute meaning; concise writing does not always have the fewest words, but it always uses the strongest ones. [PURDUEOWL-CONCISE-01]

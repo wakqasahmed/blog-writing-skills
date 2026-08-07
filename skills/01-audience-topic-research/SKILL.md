@@ -7,7 +7,7 @@ last_reviewed: 2026-08-07
 
 # Audience and Topic Research
 
-Apply [`../00-blog-writing-guardrails/SKILL.md`](../00-blog-writing-guardrails/SKILL.md) first; its gates apply to any post produced from this research.
+Apply `../00-blog-writing-guardrails/SKILL.md` first; its gates apply to any post produced from this research.
 
 ## 1. Reader-intent and ICP gate
 - Identify who the post is for and what task or question brings them to it before choosing an angle; content built around the reader's task, not the writer's default framing, is what search and language systems reward. [GOOGLE-HSW-01]

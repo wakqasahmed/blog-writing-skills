@@ -7,7 +7,7 @@ last_reviewed: 2026-08-07
 
 # Educational Clarity Writing
 
-Apply [`../00-blog-writing-guardrails/SKILL.md`](../00-blog-writing-guardrails/SKILL.md) first; its gates apply to every post before the guidance below.
+Apply `../00-blog-writing-guardrails/SKILL.md` first; its gates apply to every post before the guidance below.
 
 ## 1. Plain-language foundation
 - Organize the explanation around the reader's task ("how do I do X," "what does X mean for me"), not around the writer's own expertise or the order the writer learned the material. [DIGITALGOV-PLAIN-01]

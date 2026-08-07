@@ -20,15 +20,15 @@ Apply `../00-blog-writing-guardrails/SKILL.md` first; its hard gates (originalit
 
 ## 3. Question-headline gate
 - Do not default to a question-format headline as a CTR tactic; measured data shows question titles carry no meaningful CTR advantage over direct, declarative ones (15.5% vs. 16.3%, not a significant difference). [BACKLINKO-CTR-01]
-- Choose a question headline only when the post's core value is genuinely answering that exact question, and answer it in the opening paragraph rather than deferring the answer to build suspense. [NNG-SCANNING-01]
+- Choose a question headline only when the post's core value is genuinely answering that exact question, and answer it in the opening paragraph rather than deferring the answer to build suspense. [NNGROUP-SCANNING-01]
 
 ## 4. Scan-first structure gate
-- Assume the headline and the first two paragraphs are the only text most visitors will read: users have time to read at most 28% of an average page's words, and realistically read closer to 20%. [NNG-SCANNING-01]
-- Put the post's core answer or payoff in the headline and restate it in a direct, self-contained opening sentence; do not bury the point under throat-clearing, anecdotes, or scene-setting before the reader learns what the post delivers. [NNG-SCANNING-01][GOOGLE-SNIPPET-01]
-- Write the headline and the first line of each opening paragraph so the leading words carry the meaning: readers scan in an F-shaped pattern, sweeping the top and then the left edge of the content rather than reading word-by-word, so front-loaded, information-carrying words are what actually gets seen. [NNG-FPATTERN-01]
+- Assume the headline and the first two paragraphs are the only text most visitors will read: users have time to read at most 28% of an average page's words, and realistically read closer to 20%. [NNGROUP-SCANNING-01]
+- Put the post's core answer or payoff in the headline and restate it in a direct, self-contained opening sentence; do not bury the point under throat-clearing, anecdotes, or scene-setting before the reader learns what the post delivers. [NNGROUP-SCANNING-01][GOOGLE-SNIPPET-01]
+- Write the headline and the first line of each opening paragraph so the leading words carry the meaning: readers scan in an F-shaped pattern, sweeping the top and then the left edge of the content rather than reading word-by-word, so front-loaded, information-carrying words are what actually gets seen. [NNGROUP-FPATTERN-02]
 
 ## 5. Hook-substance gate
-- The opening hook must set up a real, specific reason to keep reading (the problem, the stakes, or the concrete outcome) rather than a generic curiosity tease with no informational content — a tease that fails to pay off the F-pattern scan loses the reader at the second sweep. [NNG-FPATTERN-01]
+- The opening hook must set up a real, specific reason to keep reading (the problem, the stakes, or the concrete outcome) rather than a generic curiosity tease with no informational content — a tease that fails to pay off the F-pattern scan loses the reader at the second sweep. [NNGROUP-FPATTERN-02]
 - Anchor the hook in the same original angle, data point, or firsthand experience required by the originality gate; a headline promising a unique insight must be backed by content that actually delivers one. [GOOGLE-EEAT-01]
 
 ## 6. Test-before-you-trust-your-instinct gate
@@ -37,4 +37,4 @@ Apply `../00-blog-writing-guardrails/SKILL.md` first; its hard gates (originalit
 
 ## 7. Pre-publish QA gate
 - Confirm the final title is between 40 and 60 characters (or intentionally justified otherwise), matches the page's actual `<title>` and `Article` structured-data headline field, and is not truncated in search preview tools before publishing. [BACKLINKO-CTR-01][GOOGLE-SCHEMA-01]
-- Confirm the opening paragraph states the post's core answer in plain language and would still make sense as a standalone extract, independent of the headline. [NNG-SCANNING-01][DIGITALGOV-PLAIN-01]
+- Confirm the opening paragraph states the post's core answer in plain language and would still make sense as a standalone extract, independent of the headline. [NNGROUP-SCANNING-01][DIGITALGOV-PLAIN-01]
