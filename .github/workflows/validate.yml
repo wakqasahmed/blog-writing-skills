@@ -39,3 +39,4 @@ jobs:
       - run: bash skills/05-educational-clarity-writing/eval/run-eval.sh
       - run: bash skills/13-editing-style-voice/eval/run-eval.sh
       - run: bash skills/15-distribution-repurposing/eval/run-eval.sh
+      - run: bash skills/09-geo-generative-engine-optimization/eval/run-eval.sh
