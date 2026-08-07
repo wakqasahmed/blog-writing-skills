@@ -7,7 +7,7 @@ last_reviewed: 2026-08-07
 
 # Technical and B2B Blogging
 
-Apply [`../00-blog-writing-guardrails/SKILL.md`](../00-blog-writing-guardrails/SKILL.md) first; its gates apply to every post covered here.
+Apply `../00-blog-writing-guardrails/SKILL.md` first; its gates apply to every post covered here.
 
 ## 1. Code-sample verification gate
 - Run every code sample against the real tool, library, or API before publishing; do not ship a sample that was typed from memory or adapted from another sample without execution. Documented behavior should have a passing test or an equivalent verification run behind it, the same standard applied to source-code documentation. [GOOGLE-DOCBP-01]

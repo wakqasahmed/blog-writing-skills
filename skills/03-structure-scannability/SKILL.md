@@ -7,7 +7,7 @@ last_reviewed: 2026-08-07
 
 # Structure and Scannability
 
-Apply [`../00-blog-writing-guardrails/SKILL.md`](../00-blog-writing-guardrails/SKILL.md) first; its gates apply to every post before this skill's guidance.
+Apply `../00-blog-writing-guardrails/SKILL.md` first; its gates apply to every post before this skill's guidance.
 
 ## 1. Inverted-pyramid gate
 - Put the post's core answer, conclusion, or most important point in the first two paragraphs, before supporting detail, background, or methodology; do not make the reader scroll past setup to reach the point. [NNGROUP-FPATTERN-01]
