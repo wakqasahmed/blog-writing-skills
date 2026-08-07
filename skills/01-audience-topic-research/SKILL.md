@@ -11,8 +11,8 @@ Apply [`../00-blog-writing-guardrails/SKILL.md`](../00-blog-writing-guardrails/S
 
 ## 1. Reader-intent and ICP gate
 - Identify who the post is for and what task or question brings them to it before choosing an angle; content built around the reader's task, not the writer's default framing, is what search and language systems reward. [GOOGLE-HSW-01]
-- Anticipate that different segments of the target reader describe the same need in different words (a novice searches "cheese board," an expert searches "charcuterie"); plan to cover the terms and framings each segment actually uses, not only the writer's preferred term. [GOOGLE-SEOSTARTER-01]
-- State the reader's starting knowledge level and desired outcome for the post before drafting; a post aimed at no one in particular satisfies no one's task. [GOOGLE-SEOSTARTER-01]
+- Anticipate that different segments of the target reader describe the same need in different words (a novice searches "cheese board," an expert searches "charcuterie"); plan to cover the terms and framings each segment actually uses, not only the writer's preferred term. [GOOGLE-SEOSTART-01]
+- State the reader's starting knowledge level and desired outcome for the post before drafting; a post aimed at no one in particular satisfies no one's task. [GOOGLE-SEOSTART-01]
 
 ## 2. Query-understanding and keyword-research gate
 - Treat a keyword list as a stand-in for real reader queries, not an exercise in stuffing exact phrases; Google's own systems match a page to a query through synonyms and inferred intent, so cover the concept fully rather than repeating one exact string. [GOOGLE-HSW-01]

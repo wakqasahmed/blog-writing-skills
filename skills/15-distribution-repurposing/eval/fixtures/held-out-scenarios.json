@@ -1,0 +1,73 @@
+[
+  {
+    "id": "cluster-01",
+    "scenario": "Team publishes a new supporting post about 'how to measure email deliverability' and, in the same publishing pass, adds a link to it from the 'Email Marketing Guide' pillar page and from two sibling posts in the cluster, using anchor text 'measuring email deliverability'.",
+    "expected": "follow"
+  },
+  {
+    "id": "cluster-02",
+    "scenario": "Writer publishes a new cluster post but leaves it unlinked from any other page on the site, planning to add internal links 'later once traffic picks up'.",
+    "expected": "violates",
+    "violates_gate": "Internal-linking cluster-strategy gate"
+  },
+  {
+    "id": "cluster-03",
+    "scenario": "Editor replaces an anchor text 'click here' pointing to a related post with descriptive anchor text 'our guide to cart-abandonment emails', placed at the point in the article where that guide is actually relevant to the reader.",
+    "expected": "follow"
+  },
+  {
+    "id": "cluster-04",
+    "scenario": "To boost a target keyword's rankings, a writer inserts the exact-match keyword phrase as anchor text into an internal link even though it reads awkwardly and doesn't match the linked page's actual topic.",
+    "expected": "violates",
+    "violates_gate": "Internal-linking cluster-strategy gate"
+  },
+  {
+    "id": "repurpose-01",
+    "scenario": "Marketer turns a published blog post's key statistics into a five-slide LinkedIn carousel and a short video script, without applying any canonical tag or duplicate-content mitigation to either format.",
+    "expected": "follow"
+  },
+  {
+    "id": "repurpose-02",
+    "scenario": "A published post is cross-posted verbatim as a full article on a partner's blog (a separate indexable web page) with no canonical tag added on either side and no link back to the original.",
+    "expected": "violates",
+    "violates_gate": "Syndication canonicalization gate"
+  },
+  {
+    "id": "repurpose-03",
+    "scenario": "When adapting a blog post's stat ('conversion rates rose 34% in Q2') into an email newsletter blurb, the writer re-checks the source data before reusing the number, since the number carries over into a new format.",
+    "expected": "follow"
+  },
+  {
+    "id": "repurpose-04",
+    "scenario": "While turning a post into a video script, the scriptwriter changes an attributed customer quote to a rounder, punchier phrasing to fit the video's pacing, without re-verifying the change against the original source.",
+    "expected": "violates",
+    "violates_gate": "Cross-channel repurposing gate"
+  },
+  {
+    "id": "syndication-01",
+    "scenario": "Before syndicating a post to an industry partner site, the two parties agree the original company blog URL is canonical, and the partner adds a rel=\"canonical\" tag on their copy pointing to that URL.",
+    "expected": "follow"
+  },
+  {
+    "id": "syndication-02",
+    "scenario": "A partner site republishing a syndicated post cannot technically add a canonical tag, so the publisher requests the partner add a clear, direct link back to the original article as the next-best signal.",
+    "expected": "follow"
+  },
+  {
+    "id": "syndication-03",
+    "scenario": "After syndicating a post to three partner sites, the original post's own canonical tag is left pointing to one of the syndicated partner URLs instead of to itself.",
+    "expected": "violates",
+    "violates_gate": "Syndication canonicalization gate"
+  },
+  {
+    "id": "qa-01",
+    "scenario": "Before publishing a cluster update, the editor clicks through every new and updated internal link to confirm each one resolves and that anchor text still matches the linked page's current content.",
+    "expected": "follow"
+  },
+  {
+    "id": "qa-02",
+    "scenario": "A syndicated copy goes live on a partner site without anyone checking whether its canonical tag actually points to the correct original URL.",
+    "expected": "violates",
+    "violates_gate": "Pre-distribution QA gate"
+  }
+]
