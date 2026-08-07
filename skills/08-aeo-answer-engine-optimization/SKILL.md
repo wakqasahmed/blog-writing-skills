@@ -29,7 +29,7 @@ Apply [`../00-blog-writing-guardrails/SKILL.md`](../00-blog-writing-guardrails/S
 - Reserve `QAPage` for genuine forum- or support-style pages where users submit and vote on alternative answers to a single posted question; do not apply it to a blog post that merely lists several questions and answers. [GOOGLE-QAPAGE-01]
 
 ## 5. Evidence-maturity caveat
-- Treat specific AEO and GEO (generative-engine optimization) tactics beyond the gates above — citation-count thresholds, optimal answer length, ideal question-heading phrasing for a particular assistant — as an actively developing, heterogeneous evidence base rather than settled, guaranteed-outcome techniques; independent surveys of this literature report inconsistent methodologies and effect sizes across studies. Validate any such tactic against the target answer engine's own current documentation before treating it as a hard rule. [GOOGLE-SNIPPET-01]
+- Treat specific AEO and GEO (generative-engine optimization) tactics beyond the gates above — citation-count thresholds, optimal answer length, ideal question-heading phrasing for a particular assistant — as an actively developing, heterogeneous evidence base rather than settled, guaranteed-outcome techniques; independent surveys of this literature report inconsistent methodologies and effect sizes across studies. Validate any such tactic against the target answer engine's own current documentation before treating it as a hard rule. [ARXIV-GEOSURVEY-01]
 
 ## 6. Pre-publish AEO check
 - For each question-based heading, confirm the paragraph beneath it stands alone as a complete answer if read with no other context on the page. [GOOGLE-SNIPPET-01]
