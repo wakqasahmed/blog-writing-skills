@@ -28,4 +28,7 @@ jobs:
       - run: bash skills/02-headlines-hooks/eval/run-eval.sh
       - run: bash skills/01-audience-topic-research/eval/run-eval.sh
       - run: bash skills/14-visual-content-accessibility/eval/run-eval.sh
+      - run: bash skills/16-measurement-content-performance/eval/run-eval.sh
+      - run: bash skills/10-eeat-credibility-signals/eval/run-eval.sh
+      - run: bash skills/12-technical-b2b-blogging/eval/run-eval.sh
       - run: bash skills/06-storytelling-case-studies/eval/run-eval.sh
