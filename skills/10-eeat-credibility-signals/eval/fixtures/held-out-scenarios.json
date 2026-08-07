@@ -1,0 +1,63 @@
+[
+  {
+    "id": "eeat-follow-01",
+    "scenario": "Draft includes a byline reading 'Jane Ortiz, RN, 8 years in clinical nutrition' linked to a full author profile page listing her credentials, plus `author` schema pointing to a Person entity matching the visible name.",
+    "expected": "follow"
+  },
+  {
+    "id": "eeat-follow-02",
+    "scenario": "A product-testing article states exactly what was tested, the 6-week test period, and the conditions used, and uses first-person language like 'we measured battery life daily for six weeks.'",
+    "expected": "follow"
+  },
+  {
+    "id": "eeat-follow-03",
+    "scenario": "Every statistic in the post links directly to the original government report or peer-reviewed study that produced the number, with inline citations next to each claim.",
+    "expected": "follow"
+  },
+  {
+    "id": "eeat-follow-04",
+    "scenario": "The post includes a proprietary survey of 500 customers the company ran itself, and calls it out in a clearly labeled 'Our original survey data' callout box separate from third-party stats.",
+    "expected": "follow"
+  },
+  {
+    "id": "eeat-follow-05",
+    "scenario": "The article shows both a 'Published on' date and a 'Last updated' date matching the page's dateModified schema, and links to the site's corrections policy after a recent factual fix.",
+    "expected": "follow"
+  },
+  {
+    "id": "eeat-violates-01",
+    "scenario": "The post is published under a generic 'Team' byline with no name, no credentials, and no link to any author or About page, on a topic (medical dosing) where reader trust depends on who is speaking.",
+    "expected": "violates",
+    "violates_gate": "1. Author bio and credentials"
+  },
+  {
+    "id": "eeat-violates-02",
+    "scenario": "A glowing product review does not disclose that the reviewer's company has an affiliate revenue relationship with the product being reviewed, and never states how the review was actually conducted.",
+    "expected": "violates",
+    "violates_gate": "2. Disclosing methodology and first-hand experience"
+  },
+  {
+    "id": "eeat-violates-03",
+    "scenario": "The post cites 'studies show productivity increases by 40%' with a link to another blog's recap article, never linking to the original study or dataset behind the number.",
+    "expected": "violates",
+    "violates_gate": "3. Linking to primary sources"
+  },
+  {
+    "id": "eeat-violates-04",
+    "scenario": "The article mixes the company's own unpublished internal test results into the same sentence and formatting as a third-party industry statistic, with no labeling distinguishing original data from cited data.",
+    "expected": "violates",
+    "violates_gate": "4. Original-data callouts"
+  },
+  {
+    "id": "eeat-violates-05",
+    "scenario": "The page was silently edited to fix a factual error discovered by a reader, with no visible 'last updated' date change, no mention of the correction, and no link to any corrections policy.",
+    "expected": "violates",
+    "violates_gate": "5. Trust signals: last-updated dates and correction policy"
+  },
+  {
+    "id": "eeat-violates-06",
+    "scenario": "The pre-publish checklist is skipped entirely: no author bio check, no primary-source verification, and no confirmation that the visible dates match structured data before the post goes live.",
+    "expected": "violates",
+    "violates_gate": "6. Pre-publish checklist"
+  }
+]
