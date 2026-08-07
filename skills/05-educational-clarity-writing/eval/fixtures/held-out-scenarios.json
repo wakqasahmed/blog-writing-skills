@@ -1,0 +1,74 @@
+[
+  {
+    "id": "follow-01",
+    "scenario": "A tutorial on 'What is DNS caching?' opens by describing the everyday problem (why a site loads slowly the first time but fast after), defines 'TTL' the first time it is used, and keeps sentences short without dropping any technical detail the reader needs to actually configure caching.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-02",
+    "scenario": "A post explaining regular expressions reports a Flesch-Kincaid grade level of 7 for the draft, but the author still has three novice readers read it and asks them to restate the concept before publishing, treating the score as one signal among several.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-03",
+    "scenario": "An explainer on recursion introduces the call stack, then base cases, then recursive cases, one at a time across separate short sections, each building only on the previously introduced piece, before combining them into a full example.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-04",
+    "scenario": "A guide to CSS flexbox shows a fully worked layout example step by step, then gives the reader a small near-transfer exercise (rearrange two items) they can check against a provided answer before tackling a more complex grid layout.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-05",
+    "scenario": "An article uses the analogy 'a database index is like a book's index' and explicitly notes that unlike a book index, a database index must be updated automatically every time data changes, so the analogy breaks down for write-heavy workloads.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-06",
+    "scenario": "Before publishing, the author has a first-time reader from the target audience read the post alone and successfully restate the core concept in their own words, without needing the technical reviewer to explain anything.",
+    "expected": "follow"
+  },
+  {
+    "id": "violate-01",
+    "scenario": "A tutorial on Kubernetes networking is organized entirely around the order the author personally learned the topic over several years, starting with obscure historical context before ever addressing the reader's actual task of exposing a service.",
+    "expected": "violates",
+    "violates_gate": "1. Plain-language foundation"
+  },
+  {
+    "id": "violate-02",
+    "scenario": "The author simplifies a security post to hit a lower reading grade by cutting the explanation of when a workaround is actually unsafe, leaving only the easy part of the claim intact.",
+    "expected": "violates",
+    "violates_gate": "1. Plain-language foundation"
+  },
+  {
+    "id": "violate-03",
+    "scenario": "An editor rewrites a dense onboarding guide until it hits a Flesch-Kincaid grade level of 6 and ships it immediately, treating the score itself as proof the guide is now understandable with no reader testing or subject-matter check.",
+    "expected": "violates",
+    "violates_gate": "2. Readability-formula mechanics and limits"
+  },
+  {
+    "id": "violate-04",
+    "scenario": "A post introduces three new interdependent concepts (event loop, microtasks, and the call stack) in a single dense paragraph before any of them has been explained on its own, then immediately references a diagram three paragraphs later without repeating its caption.",
+    "expected": "violates",
+    "violates_gate": "3. Cognitive load gate"
+  },
+  {
+    "id": "violate-05",
+    "scenario": "A tutorial states the abstract rule for normalizing a database schema and moves straight to an unguided exercise, without ever walking through one complete worked example of the normalization steps.",
+    "expected": "violates",
+    "violates_gate": "4. Worked examples and analogies"
+  },
+  {
+    "id": "violate-06",
+    "scenario": "The article compares an API rate limiter to a nightclub bouncer to introduce the concept, but never mentions any way the analogy fails to describe how rate limiters actually behave under distributed load.",
+    "expected": "violates",
+    "violates_gate": "4. Worked examples and analogies"
+  },
+  {
+    "id": "violate-07",
+    "scenario": "The post ships after only the in-house technical reviewer confirms it makes sense; no first-time reader from the target audience is asked to restate the concept, and one newly introduced term is used four times before it is ever defined.",
+    "expected": "violates",
+    "violates_gate": "5. Pre-publish clarity QA"
+  }
+]
