@@ -22,5 +22,8 @@
   "W3C-MEDIA-01": "https://www.w3.org/WAI/media/av/",
   "W3C-CAPTIONS-01": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html",
   "W3C-AUDIODESC-01": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html",
-  "JOHARI-PEEKING-01": "https://arxiv.org/abs/1512.04922"
+  "JOHARI-PEEKING-01": "https://arxiv.org/abs/1512.04922",
+  "GOOGLE-QRG-01": "https://guidelines.raterhub.com/searchqualityevaluatorguidelines.pdf",
+  "TRUSTPROJECT-INDICATORS-01": "https://thetrustproject.org/trust-indicators/",
+  "SCHEMAORG-AUTHOR-01": "https://schema.org/author"
 }
