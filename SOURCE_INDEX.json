@@ -6,5 +6,8 @@
   "GOOGLE-SCHEMA-01": "https://developers.google.com/search/docs/appearance/structured-data/article",
   "W3C-WCAG-01": "https://www.w3.org/WAI/WCAG22/quickref/",
   "FTC-ADSUB-01": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
-  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language"
+  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language",
+  "GOOGLE-HSW-01": "https://www.google.com/search/howsearchworks/how-search-works/ranking-results/",
+  "GOOGLE-SEOSTARTER-01": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+  "AHREFS-KWRESEARCH-01": "https://ahrefs.com/seo/keyword-research"
 }
