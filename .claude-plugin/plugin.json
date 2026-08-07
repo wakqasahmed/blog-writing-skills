@@ -2,6 +2,7 @@
   "name": "blog-writing-skills",
   "skills": [
     "./skills/00-blog-writing-guardrails",
-    "./skills/02-headlines-hooks"
+    "./skills/02-headlines-hooks",
+    "./skills/03-structure-scannability"
   ]
 }
