@@ -5,6 +5,7 @@ import os
 import re
 import sys
 import json
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -13,12 +14,17 @@ root = Path(__file__).resolve().parents[1]
 errors = []
 warnings = []
 
-USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-)
+USER_AGENT = "blog-writing-skills-link-checker/1.0 (+https://github.com/wakqasahmed/blog-writing-skills)"
 URL_TIMEOUT_SECONDS = 8
+URL_CHECK_DELAY_SECONDS = 0.5
 HEAD_FALLBACK_STATUSES = {403, 405, 501}
+# Bot-management challenges (rate-limiting, Cloudflare scoring CI IPs, etc.) can return
+# these codes intermittently for reasons unrelated to real link rot. Treat them as
+# warnings, not build-failing errors, so the weekly job isn't permanently/flakily red.
+BLOCKED_STATUSES = {401, 403, 405, 429}
+
+STALE_WARN_DAYS = 180
+STALE_ERROR_DAYS = 365
 
 
 def fetch_status(url, method):
@@ -30,16 +36,39 @@ def fetch_status(url, method):
         return e.code
 
 
+def classify_status(status):
+    """Classify an HTTP status code as ("ok"|"warning"|"error", message-or-None)."""
+    if 200 <= status < 400:
+        return "ok", None
+    if status in BLOCKED_STATUSES:
+        return "warning", f"returned HTTP {status} (access blocked, may be bot-detection, not necessarily dead)"
+    return "error", f"returned HTTP {status}"
+
+
+def classify_staleness(age_days):
+    """Classify a last_reviewed age in days as ("ok"|"warning"|"error")."""
+    if age_days > STALE_ERROR_DAYS:
+        return "error"
+    if age_days > STALE_WARN_DAYS:
+        return "warning"
+    return "ok"
+
+
 def check_urls(index):
-    for source_id, url in sorted(index.items()):
+    items = sorted(index.items())
+    for i, (source_id, url) in enumerate(items):
+        if i > 0:
+            time.sleep(URL_CHECK_DELAY_SECONDS)
         try:
             status = fetch_status(url, "HEAD")
             if status in HEAD_FALLBACK_STATUSES:
                 status = fetch_status(url, "GET")
-            ok = 200 <= status < 400
-            print(f"  {source_id}: {status}{'' if ok else ' (FAILED)'}")
-            if not ok:
-                errors.append(f"{source_id} [{url}] returned HTTP {status}")
+            level, message = classify_status(status)
+            print(f"  {source_id}: {status}{'' if level == 'ok' else f' ({level.upper()})'}")
+            if level == "warning":
+                warnings.append(f"{source_id} [{url}] {message}")
+            elif level == "error":
+                errors.append(f"{source_id} [{url}] {message}")
         except Exception as e:
             print(f"  {source_id}: ERROR ({e})")
             errors.append(f"{source_id} [{url}] request failed: {e}")
@@ -50,7 +79,7 @@ def main():
     parser.add_argument(
         "--check-urls",
         action="store_true",
-        help="fetch every registered source URL and fail on non-2xx/3xx responses (network required)",
+        help="fetch every registered source URL and fail on hard-dead responses (network required)",
     )
     args = parser.parse_args()
 
@@ -86,9 +115,10 @@ def main():
             errors.append(f"{path.relative_to(root)} has no last_reviewed date")
             continue
         age = (today - datetime.date.fromisoformat(match.group(1))).days
-        if age > 365:
-            errors.append(f"{path.relative_to(root)} last reviewed {age} days ago (>365); sources must be re-verified")
-        elif age > 180:
+        level = classify_staleness(age)
+        if level == "error":
+            errors.append(f"{path.relative_to(root)} last reviewed {age} days ago (>{STALE_ERROR_DAYS}); sources must be re-verified")
+        elif level == "warning":
             warnings.append(f"{path.relative_to(root)} last reviewed {age} days ago; re-verify its sources")
 
     if args.check_urls:
