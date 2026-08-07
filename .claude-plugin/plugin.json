@@ -1,5 +1,9 @@
 {
   "name": "blog-writing-skills",
+  "description": "Evidence-backed skills for writing persuasive, educational, clear, and SEO/AEO/GEO-friendly blog posts.",
+  "version": "1.0.0",
+  "author": "Wakqas Ahmed",
+  "license": "MIT",
   "skills": [
     "./skills/00-blog-writing-guardrails",
     "./skills/01-audience-topic-research",
