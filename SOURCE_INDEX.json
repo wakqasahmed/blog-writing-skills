@@ -6,5 +6,7 @@
   "GOOGLE-SCHEMA-01": "https://developers.google.com/search/docs/appearance/structured-data/article",
   "W3C-WCAG-01": "https://www.w3.org/WAI/WCAG22/quickref/",
   "FTC-ADSUB-01": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
-  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language"
+  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language",
+  "NNGROUP-FPATTERN-01": "https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/",
+  "NNGROUP-LAYERCAKE-01": "https://www.nngroup.com/articles/layer-cake-pattern-scanning/"
 }
