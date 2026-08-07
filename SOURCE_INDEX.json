@@ -6,5 +6,9 @@
   "GOOGLE-SCHEMA-01": "https://developers.google.com/search/docs/appearance/structured-data/article",
   "W3C-WCAG-01": "https://www.w3.org/WAI/WCAG22/quickref/",
   "FTC-ADSUB-01": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
-  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language"
+  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language",
+  "BACKLINKO-CTR-01": "https://backlinko.com/google-ctr-stats",
+  "NNG-FPATTERN-01": "https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content-discovered/",
+  "NNG-SCANNING-01": "https://www.nngroup.com/articles/how-little-do-users-read/",
+  "UPWORTHY-ARCHIVE-01": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8329003/"
 }
