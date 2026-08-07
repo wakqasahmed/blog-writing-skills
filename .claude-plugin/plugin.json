@@ -2,6 +2,10 @@
   "name": "blog-writing-skills",
   "skills": [
     "./skills/00-blog-writing-guardrails",
-    "./skills/04-persuasive-copywriting"
+    "./skills/01-audience-topic-research",
+    "./skills/02-headlines-hooks",
+    "./skills/03-structure-scannability",
+    "./skills/04-persuasive-copywriting",
+    "./skills/14-visual-content-accessibility"
   ]
 }

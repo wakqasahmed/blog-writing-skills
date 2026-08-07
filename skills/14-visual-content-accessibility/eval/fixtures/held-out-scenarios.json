@@ -1,0 +1,90 @@
+[
+  {
+    "id": "follow-01",
+    "scenario": "Writer adds a screenshot of an actual error dialog referenced in the troubleshooting steps, and writes alt text 'Error dialog reading \"Connection timed out after 30s\" with a Retry button' because the message content matters to the reader.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-02",
+    "scenario": "A purely decorative header banner image (no informational content) is marked with alt=\"\" so screen readers skip it entirely, and no caption or surrounding text references it.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-03",
+    "scenario": "A complex bar chart comparing quarterly revenue across five regions has short alt text summarizing the overall trend, and the full underlying numbers are also given in an adjacent data table on the page.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-04",
+    "scenario": "The post embeds a prerecorded tutorial video with synchronized captions covering dialogue plus a caption noting '[keyboard clicking]' for a relevant sound effect, and also links a full transcript below the embed.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-05",
+    "scenario": "A line chart shows three data series distinguished by both color and distinct dash patterns (solid, dashed, dotted), with each line also labeled directly in the chart, and all lines meet 3:1 contrast against the background.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-06",
+    "scenario": "An icon inside a button links to the pricing page; its alt text reads 'View pricing' describing the destination rather than describing the icon's shape or color.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-07",
+    "scenario": "Before recording a demo video, the team scripts narration pauses specifically to describe an on-screen configuration change that isn't otherwise spoken aloud, so the audio description is baked into the primary track.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-08",
+    "scenario": "The writer considers adding a generic stock photo of people typing on laptops purely to break up a long section, decides it adds no reader value, and leaves it out rather than adding it and writing alt text for it.",
+    "expected": "follow"
+  },
+  {
+    "id": "violates-01",
+    "scenario": "A diagram showing the request/response flow between three services is inserted with alt text 'diagram.png' and no explanation of the flow anywhere in the surrounding text.",
+    "expected": "violates",
+    "violates_gate": 2
+  },
+  {
+    "id": "violates-02",
+    "scenario": "A stock photo of a generic office is added between two paragraphs purely for visual break-up, with no alt text and no decorative marking, so a screen reader announces it as an unlabeled image.",
+    "expected": "violates",
+    "violates_gate": 1
+  },
+  {
+    "id": "violates-03",
+    "scenario": "Body paragraph text is rendered in light gray (#aaaaaa) on a white background, producing a contrast ratio under 3:1, well below the 4.5:1 minimum required for normal body text.",
+    "expected": "violates",
+    "violates_gate": 3
+  },
+  {
+    "id": "violates-04",
+    "scenario": "A chart distinguishes 'approved' from 'rejected' states using only red and green fill colors with no labels, patterns, or icons, so the distinction disappears for a reader with red-green color vision deficiency.",
+    "expected": "violates",
+    "violates_gate": 3
+  },
+  {
+    "id": "violates-05",
+    "scenario": "An embedded prerecorded product-demo video with spoken narration and background music is published with no captions at all, relying entirely on the audio track.",
+    "expected": "violates",
+    "violates_gate": 4
+  },
+  {
+    "id": "violates-06",
+    "scenario": "An audio-only podcast episode is embedded in the post with a play button and no transcript provided anywhere on the page.",
+    "expected": "violates",
+    "violates_gate": 4
+  },
+  {
+    "id": "violates-07",
+    "scenario": "A complex infographic packed with statistics has a long, literal alt attribute describing its visual layout ('a blue rectangle with rounded corners containing white text and three icons') instead of conveying the actual statistics it presents.",
+    "expected": "violates",
+    "violates_gate": 2
+  },
+  {
+    "id": "violates-08",
+    "scenario": "A silent screen-recording video shows a multi-step configuration change entirely through on-screen actions with no narration, captions, or audio description, and the surrounding text does not describe the steps either.",
+    "expected": "violates",
+    "violates_gate": 4
+  }
+]
