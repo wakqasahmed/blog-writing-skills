@@ -2,5 +2,12 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+FIXTURES="$SCRIPT_DIR/fixtures/held-out-scenarios.json"
 
-python3 "${SCRIPT_DIR}/contract_check.py"
+echo "== Contract check =="
+python3 "$SCRIPT_DIR/contract_check.py"
+
+echo "== Fixture structural check =="
+python3 "$SCRIPT_DIR/../../../scripts/validate-fixtures.py" "$FIXTURES"
+
+echo "== All eval checks passed =="

@@ -23,20 +23,10 @@ jobs:
           python-version: "3.12"
       - run: python3 scripts/validate-plugin.py
       - run: python3 scripts/validate-citations.py
-      - run: bash skills/00-blog-writing-guardrails/eval/run-eval.sh
-      - run: bash skills/03-structure-scannability/eval/run-eval.sh
-      - run: bash skills/02-headlines-hooks/eval/run-eval.sh
-      - run: bash skills/01-audience-topic-research/eval/run-eval.sh
-      - run: bash skills/14-visual-content-accessibility/eval/run-eval.sh
-      - run: bash skills/16-measurement-content-performance/eval/run-eval.sh
-      - run: bash skills/10-eeat-credibility-signals/eval/run-eval.sh
-      - run: bash skills/12-technical-b2b-blogging/eval/run-eval.sh
-      - run: bash skills/06-storytelling-case-studies/eval/run-eval.sh
-      - run: bash skills/11-data-driven-original-research/eval/run-eval.sh
-      - run: bash skills/04-persuasive-copywriting/eval/run-eval.sh
-      - run: bash skills/07-seo-on-page-optimization/eval/run-eval.sh
-      - run: bash skills/08-aeo-answer-engine-optimization/eval/run-eval.sh
-      - run: bash skills/05-educational-clarity-writing/eval/run-eval.sh
-      - run: bash skills/13-editing-style-voice/eval/run-eval.sh
-      - run: bash skills/15-distribution-repurposing/eval/run-eval.sh
-      - run: bash skills/09-geo-generative-engine-optimization/eval/run-eval.sh
+      - name: Run all skill evals
+        run: |
+          set -euo pipefail
+          for s in skills/*/eval/run-eval.sh; do
+            echo "== $s"
+            bash "$s"
+          done
