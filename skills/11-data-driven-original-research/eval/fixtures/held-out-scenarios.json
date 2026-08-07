@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ddr-001",
+    "scenario": "Writer publishes results of an in-house customer survey and states the survey mode, the target population, how respondents were recruited from an opt-in panel, and the exact question wording used.",
+    "expected": "follow"
+  },
+  {
+    "id": "ddr-002",
+    "scenario": "Writer cites a headline statistic from a third-party survey but never states how the sample was collected, what population it represents, or the exact question that produced the number.",
+    "expected": "violates",
+    "violates_gate": "1. Methodology-transparency gate"
+  },
+  {
+    "id": "ddr-003",
+    "scenario": "Writer presents results from a self-selected opt-in web panel using the same confident 'nationally representative, +/-2%' language normally reserved for a probability-based sample.",
+    "expected": "violates",
+    "violates_gate": "1. Methodology-transparency gate"
+  },
+  {
+    "id": "ddr-004",
+    "scenario": "Writer reports that '68% of respondents preferred Option A' in a pull quote with no sample size given anywhere in the post, including in a footnote.",
+    "expected": "violates",
+    "violates_gate": "2. Sample-size and margin-of-error disclosure gate"
+  },
+  {
+    "id": "ddr-005",
+    "scenario": "Writer reports a subgroup finding ('72% of remote workers under 25 agreed') without stating how many respondents were in that subgroup.",
+    "expected": "violates",
+    "violates_gate": "2. Sample-size and margin-of-error disclosure gate"
+  },
+  {
+    "id": "ddr-006",
+    "scenario": "Writer reports the topline statistic alongside its sample size and the margin of sampling error for the probability-based panel that produced it.",
+    "expected": "follow"
+  },
+  {
+    "id": "ddr-007",
+    "scenario": "Writer ran the same dataset through a dozen different subgroup cuts, found one significant result, and published only that cut without mentioning the other eleven tests.",
+    "expected": "violates",
+    "violates_gate": "3. Anti-p-hacking and anti-cherry-picking gate"
+  },
+  {
+    "id": "ddr-008",
+    "scenario": "Writer discloses in the methodology section that fourteen comparisons were run on the dataset and explains which correction was applied before highlighting the significant result.",
+    "expected": "follow"
+  },
+  {
+    "id": "ddr-009",
+    "scenario": "Writer had a thesis in mind before analysis, found the full dataset didn't support it, and quietly published only the two data points that did fit the narrative.",
+    "expected": "violates",
+    "violates_gate": "3. Anti-p-hacking and anti-cherry-picking gate"
+  },
+  {
+    "id": "ddr-010",
+    "scenario": "Headline reads 'Remote Work Causes Higher Burnout' based on a purely observational correlational survey with no controlled or randomized design behind it.",
+    "expected": "violates",
+    "violates_gate": "4. Correlation-versus-causation gate"
+  },
+  {
+    "id": "ddr-011",
+    "scenario": "Writer reports 'companies that adopted the tool saw higher retention' from observational data and explicitly labels it a correlation, noting other explanations are possible, since no randomized study was run.",
+    "expected": "follow"
+  },
+  {
+    "id": "ddr-012",
+    "scenario": "A chart's y-axis is truncated to start at 80 instead of 0, making a 3-point difference between two bars look like a threefold difference.",
+    "expected": "violates",
+    "violates_gate": "5. Honest chart-design gate"
+  },
+  {
+    "id": "ddr-013",
+    "scenario": "Writer builds a bar chart with a zero-based axis and proportions that visually match the actual size of the underlying difference reported in the text.",
+    "expected": "follow"
+  },
+  {
+    "id": "ddr-014",
+    "scenario": "Before publishing, the writer confirms sample size, margin of error, survey mode, and exact question wording are all disclosed, and reviews every chart's axis for distortion.",
+    "expected": "follow"
+  },
+  {
+    "id": "ddr-015",
+    "scenario": "Writer ships the post with a chart whose visual bar heights suggest a much larger gap than the substantiated numbers in the prose actually show, and no one reviewed the chart before publishing.",
+    "expected": "violates",
+    "violates_gate": "5. Honest chart-design gate"
+  }
+]
