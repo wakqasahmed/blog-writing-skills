@@ -29,7 +29,7 @@ Apply `../00-blog-writing-guardrails/SKILL.md` first; its originality, accuracy,
 
 ## 5. Internal-linking gate
 - Link to relevant internal and external resources using descriptive anchor text that tells the reader what the destination page is about; do not use generic anchor text like "click here" or "this page." [GOOGLE-SEOSTART-01]
-- Implement every link as an `<a>` element with a real `href` attribute; do not rely on `<span>`/`<div>` click handlers or JavaScript-only navigation (`href="javascript:..."`) for links a reader or crawler needs to follow. [GOOGLE-CRAWLLINKS-01]
+- Implement every link as an `<a>` element with a real `href` attribute; do not rely on `<span>`/`<div>` click handlers or JavaScript-only navigation (`href="javascript:..."`) for links a reader or crawler needs to follow. [GOOGLE-LINKS-01]
 - Only link out to external sources the author trusts; add `rel="nofollow"` to links the author cannot vouch for, including any user-submitted links in comments. [GOOGLE-SEOSTART-01]
 
 ## 6. Image optimization gate
