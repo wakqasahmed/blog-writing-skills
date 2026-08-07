@@ -1,0 +1,16 @@
+# Source and Claim Ledger
+
+Last reviewed: 2026-08-07
+
+Each normative sentence in the skills cites one or more IDs below. Open the linked first-party source to verify the associated instruction. Source pages can change; re-check before production use.
+
+| ID | Publisher | Source | Supports |
+|---|---|---|---|
+| `GOOGLE-EEAT-01` | Google Search Central | [Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) | Content should demonstrate who created it, how, and why; show first-hand expertise/experience; and be produced for readers first, not primarily to manipulate rankings. |
+| `GOOGLE-AICONTENT-01` | Google Search Central | [Google Search's guidance about AI-generated content](https://developers.google.com/search/blog/2023/02/google-search-and-ai-content) | Google rewards content quality, not the production method; automation used to obscure quality, originality, or authorship is treated as spam. |
+| `GOOGLE-CANON-01` | Google Search Central | [How to specify a canonical with rel="canonical" and other methods](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls) | Duplicate or near-duplicate pages should declare a single canonical URL; self-referencing canonicals on every page prevent ranking signals from splitting across duplicates. |
+| `GOOGLE-SNIPPET-01` | Google Search Central | [Featured snippets and your website](https://developers.google.com/search/docs/appearance/featured-snippets) | Concise, well-structured direct answers under clear headings are eligible for featured-snippet and related-question placement. |
+| `GOOGLE-SCHEMA-01` | Google Search Central | [Article structured data](https://developers.google.com/search/docs/appearance/structured-data/article) | Article schema with author, publish/modified dates, and publisher data gives Google the signals needed for byline and date rich results; markup must reflect visible page content. |
+| `W3C-WCAG-01` | W3C Web Accessibility Initiative | [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/) | Non-text content needs equivalent alternative text; heading levels must nest in a nesting hierarchy that reflects real document structure. |
+| `FTC-ADSUB-01` | U.S. Federal Trade Commission | [FTC Policy Statement Regarding Advertising Substantiation](https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation) | Objective claims (express or implied) must have a reasonable basis and adequate substantiation before publication. |
+| `DIGITALGOV-PLAIN-01` | U.S. General Services Administration (Digital.gov) | [Plain language guide](https://digital.gov/guides/plain-language) | Plain-language writing organizes content around reader tasks, uses short sentences and everyday words, and is tested for clarity — required of U.S. federal agencies under the Plain Writing Act and adopted as a general web-writing standard. |
