@@ -24,4 +24,15 @@ jobs:
       - run: python3 scripts/validate-plugin.py
       - run: python3 scripts/validate-citations.py
       - run: bash skills/00-blog-writing-guardrails/eval/run-eval.sh
+      - run: bash skills/03-structure-scannability/eval/run-eval.sh
+      - run: bash skills/02-headlines-hooks/eval/run-eval.sh
+      - run: bash skills/01-audience-topic-research/eval/run-eval.sh
+      - run: bash skills/14-visual-content-accessibility/eval/run-eval.sh
+      - run: bash skills/16-measurement-content-performance/eval/run-eval.sh
+      - run: bash skills/10-eeat-credibility-signals/eval/run-eval.sh
+      - run: bash skills/12-technical-b2b-blogging/eval/run-eval.sh
+      - run: bash skills/06-storytelling-case-studies/eval/run-eval.sh
+      - run: bash skills/11-data-driven-original-research/eval/run-eval.sh
+      - run: bash skills/04-persuasive-copywriting/eval/run-eval.sh
+      - run: bash skills/07-seo-on-page-optimization/eval/run-eval.sh
       - run: bash skills/08-aeo-answer-engine-optimization/eval/run-eval.sh

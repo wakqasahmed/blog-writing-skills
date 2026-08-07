@@ -1,0 +1,74 @@
+[
+  {
+    "id": "follow-01",
+    "scenario": "A post about a security product opens by establishing the author's team has run the vulnerability disclosure program for three years and shipped the patches referenced (ethos), then makes the technical case for why the new default matters (logos), before closing with a short line about the risk of staying exposed (pathos).",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-02",
+    "scenario": "A pricing-page blog post cites social proof by linking to 40 real, named customer case studies and states the actual number of paying teams on the plan, using that real adoption data to reinforce the argument already made about the plan's value.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-03",
+    "scenario": "A renewal-reminder post frames the message as 'Keep the discount you already have' rather than 'Get a discount', because the reader currently holds that discount and would lose it, which the writer confirms is factually true for this reader segment.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-04",
+    "scenario": "Before the CTA, a post about switching accounting software names the objection 'but migrating my data sounds painful' directly, then answers it with a link to the actual automated-migration tool and its documented success rate.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-05",
+    "scenario": "A CTA button reads 'Start your 14-day free trial' instead of 'Learn more', and the accompanying icon has alt text 'Start free trial arrow', so a screen-reader user hears the same specific next action a sighted reader sees.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-06",
+    "scenario": "Before publishing, the editor rereads the headline, intro, and CTA together and confirms every claim of authority, scarcity, and urgency in the piece maps to a fact — a real named expert, a real remaining seat count, and a real end-of-month deadline.",
+    "expected": "follow"
+  },
+  {
+    "id": "violates-01",
+    "scenario": "A landing-page blog post opens entirely with an emotional appeal about the reader's fear of falling behind competitors, and never states any argument, evidence, or credential for why the product actually addresses that fear.",
+    "expected": "violates",
+    "violates_gate": "1. Rhetorical-foundations gate (ethos, pathos, logos)"
+  },
+  {
+    "id": "violates-02",
+    "scenario": "A post displays a rotating banner claiming '3 people are viewing this deal right now' and 'only 2 left in stock', but the number is a hardcoded placeholder that never reflects real inventory or real visitor counts.",
+    "expected": "violates",
+    "violates_gate": "2. Influence-principles gate (Cialdini)"
+  },
+  {
+    "id": "violates-03",
+    "scenario": "A checkout-reminder post tells the reader they will 'lose their cart forever in 10 minutes' to create urgency, even though the product team confirms carts are actually saved indefinitely and nothing is lost.",
+    "expected": "violates",
+    "violates_gate": "3. Framing and loss-aversion gate"
+  },
+  {
+    "id": "violates-04",
+    "scenario": "A post anticipates the objection 'is this secure enough for healthcare data' and responds only with 'don't worry, we take security very seriously,' without linking to a compliance certification, audit, or any verifiable evidence.",
+    "expected": "violates",
+    "violates_gate": "4. Objection-handling gate"
+  },
+  {
+    "id": "violates-05",
+    "scenario": "Every CTA across a post says 'Click here' with no indication of what happens next, and the CTA icon image has no alt text at all.",
+    "expected": "violates",
+    "violates_gate": "5. CTA-design gate"
+  },
+  {
+    "id": "violates-06",
+    "scenario": "The writer skips the final persuasion QA pass and ships the post with an authority claim ('recommended by leading experts') that names no expert and links to no source, alongside a countdown timer nobody checked against a real deadline.",
+    "expected": "violates",
+    "violates_gate": "6. Pre-publish persuasion QA gate"
+  },
+  {
+    "id": "violates-07",
+    "scenario": "A B2B post spends its entire objection section restating 'trust us, we're the best in the industry' three different ways instead of naming a specific buyer concern and answering it with evidence.",
+    "expected": "violates",
+    "violates_gate": "4. Objection-handling gate"
+  }
+]

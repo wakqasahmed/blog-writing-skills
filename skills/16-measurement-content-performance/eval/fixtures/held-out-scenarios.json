@@ -1,0 +1,78 @@
+[
+  {
+    "id": "hs-01",
+    "scenario": "A blog post's impressions rose 40% this month. The team reports this as proof that the on-page content is now more engaging and readers are spending more time on it.",
+    "expected": "violates",
+    "violates_gate": "1. KPI-to-funnel-stage gate"
+  },
+  {
+    "id": "hs-02",
+    "scenario": "A page ranking #2 has a 22% CTR. The analyst compares it only against other pages ranking in positions 1-3, not against a site-wide average CTR, before deciding it is underperforming.",
+    "expected": "follow"
+  },
+  {
+    "id": "hs-03",
+    "scenario": "The monthly report shows organic clicks and CTR in one section, and time-on-page, scroll depth, and email signups in a clearly separate section, so a reader can see traffic grew while engagement dipped.",
+    "expected": "follow"
+  },
+  {
+    "id": "hs-04",
+    "scenario": "A page ranking #14 gets a new headline that lifts its CTR by 3 points. The team prioritizes rolling this same headline test out to the site's top pages ranking #1-3 first, expecting the biggest absolute click gain there.",
+    "expected": "follow"
+  },
+  {
+    "id": "hs-05",
+    "scenario": "A post's organic clicks dropped for one week, then bounced back the following week. The editor immediately flags it for a full content refresh based on that single week's dip.",
+    "expected": "violates",
+    "violates_gate": "2. Content-decay detection and refresh-cadence gate"
+  },
+  {
+    "id": "hs-06",
+    "scenario": "A decayed post's pricing and screenshots are outdated. The writer updates the facts and screenshots, re-verifies the stats against current sources, and updates the visible and structured-data modification date to match.",
+    "expected": "follow"
+  },
+  {
+    "id": "hs-07",
+    "scenario": "A post has sustained decay, but its facts are still accurate — it has simply been outranked by newer, more thorough competitor content. The team responds by only changing the 'last updated' date on the page without adding any new depth or evidence.",
+    "expected": "violates",
+    "violates_gate": "2. Content-decay detection and refresh-cadence gate"
+  },
+  {
+    "id": "hs-08",
+    "scenario": "Before refreshing a decayed post, the writer re-checks every carried-over statistic against its current primary source, exactly as they would for a brand-new post.",
+    "expected": "follow"
+  },
+  {
+    "id": "hs-09",
+    "scenario": "A headline A/B test starts trending significant on day 2 of a planned 14-day run. The team stops the test immediately and ships the winning headline as the new default.",
+    "expected": "violates",
+    "violates_gate": "3. Valid headline/CTA A/B-testing gate"
+  },
+  {
+    "id": "hs-10",
+    "scenario": "A test needs an early check due to a hard business deadline, so the team uses an always-valid confidence-sequence method built for continuous monitoring rather than a fixed-sample p-value check at an arbitrary interim point.",
+    "expected": "follow"
+  },
+  {
+    "id": "hs-11",
+    "scenario": "One experiment simultaneously varies the headline and the CTA copy in the same arm, while also letting the page's ranking position shift between the two variants.",
+    "expected": "violates",
+    "violates_gate": "3. Valid headline/CTA A/B-testing gate"
+  },
+  {
+    "id": "hs-12",
+    "scenario": "A test reaches its pre-committed sample size and stopping rule with a clear winner. The team reports that variant as the new default headline.",
+    "expected": "follow"
+  },
+  {
+    "id": "hs-13",
+    "scenario": "Marketing publishes 'proven to double clicks' in a stakeholder deck based on a mid-test lift observed on day 3 of a test that has not yet reached its pre-committed stopping rule.",
+    "expected": "violates",
+    "violates_gate": "4. Reporting-integrity gate"
+  },
+  {
+    "id": "hs-14",
+    "scenario": "After refreshing a post, the team updates the byline, publish date, and last-reviewed date in both the visible page and the structured data before marking the refresh complete.",
+    "expected": "follow"
+  }
+]
