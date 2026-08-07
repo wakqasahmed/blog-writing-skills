@@ -1,0 +1,79 @@
+[
+  {
+    "id": "follow-01",
+    "scenario": "Before drafting a post about 'best cheese boards for beginners', the writer states the reader is a first-time host who doesn't know cheese pairing terms and wants a simple shopping list, then notes that experienced readers might instead search 'charcuterie board' and plans to cover both framings.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-02",
+    "scenario": "The writer builds a keyword list for a SaaS onboarding article by combining seed terms customers actually type, terms competitors rank for, and phrases pulled from support tickets and community forum threads, then tags each term as informational, commercial, or navigational before picking an angle.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-03",
+    "scenario": "A researcher finds a keyword with huge search-volume estimates but, because ranking difficulty is high and the topic doesn't match the business's actual services, chooses a lower-volume but more relevant and reachable topic instead.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-04",
+    "scenario": "Before writing, the team reads the top five ranking pages and the AI Overview answer for their target query, notices none of them cover a recent regulatory change, and decides to make that missing update the spine of their new post.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-05",
+    "scenario": "The outline stage explicitly carries forward the reader persona, primary query, and classified intent established during research, and the writer records the date the keyword research was run so an editor can check it's still current before the post is republished next year.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-06",
+    "scenario": "For a query eligible for a featured-snippet-style placement, the writer plans a tight, self-contained two-sentence answer under its own H2 near the top of the post, matching how such direct-answer placements are typically earned.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-07",
+    "scenario": "The writer notes that the target reader is a mid-level marketer who already knows basic SEO concepts but wants to learn structured data specifically, and shapes the post's depth and vocabulary around that stated starting knowledge level and desired outcome.",
+    "expected": "follow"
+  },
+  {
+    "id": "violates-01",
+    "scenario": "The writer picks a keyword purely because a third-party tool shows 40,000 monthly searches, without checking ranking difficulty, competitor coverage, or whether it fits the business's actual offering, and moves straight to drafting.",
+    "expected": "violates",
+    "violates_gate": "2. Query-understanding and keyword-research gate"
+  },
+  {
+    "id": "violates-02",
+    "scenario": "The article is drafted around the writer's own preferred phrasing of the topic without ever identifying who the reader is, what task brought them to the page, or what outcome they want, on the theory that a well-written post will find its audience regardless.",
+    "expected": "violates",
+    "violates_gate": "1. Reader-intent and ICP gate"
+  },
+  {
+    "id": "violates-03",
+    "scenario": "The keyword list is built entirely from one brainstorming session by the writer, repeating the exact same phrase five times throughout the draft to 'target' it, with no input from competitor pages, customer language, or forum/Q&A research.",
+    "expected": "violates",
+    "violates_gate": "2. Query-understanding and keyword-research gate"
+  },
+  {
+    "id": "violates-04",
+    "scenario": "The writer starts drafting immediately after picking a topic, without reading any of the pages currently ranking for the target query or checking what AI answers already say, so the finished post ends up restating the same points as the top result almost point for point.",
+    "expected": "violates",
+    "violates_gate": "3. Competitive SERP and AI-answer gap analysis gate"
+  },
+  {
+    "id": "violates-05",
+    "scenario": "During outlining, the writer quietly shifts the post toward a more advanced reader and a navigational intent than the informational, beginner-focused query and persona that were actually researched, without flagging or reconciling the change.",
+    "expected": "violates",
+    "violates_gate": "4. Research-to-outline handoff gate"
+  },
+  {
+    "id": "violates-06",
+    "scenario": "The post is republished a year later with no record of when the original keyword or topic research was done, so no one can tell whether the ranking angle or query intent is still accurate before it goes back out.",
+    "expected": "violates",
+    "violates_gate": "4. Research-to-outline handoff gate"
+  },
+  {
+    "id": "violates-07",
+    "scenario": "The writer treats a single exact-match keyword phrase as the entire research task, repeating that one string throughout the piece instead of covering the broader concept and its synonyms, on the assumption that exact-match repetition is what search systems reward.",
+    "expected": "violates",
+    "violates_gate": "2. Query-understanding and keyword-research gate"
+  }
+]

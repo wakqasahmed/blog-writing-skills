@@ -1,0 +1,68 @@
+[
+  {
+    "id": "plain-language-follow-01",
+    "scenario": "A drafter rewrites a setup guide's opening from 'Users must first complete the requisite provisioning workflow prior to instantiation' to 'Set up your account before you start.' They define the one unavoidable technical term ('API key') the first time it appears and cut every other jargon word a general reader wouldn't know.",
+    "expected": "follow"
+  },
+  {
+    "id": "filler-hedging-follow-02",
+    "scenario": "During a self-edit pass, the writer deletes 'it seems like this approach is somewhat effective in some cases' and replaces it with 'this approach cuts load time by 40%,' removing the hedging qualifiers and the redundant restatement.",
+    "expected": "follow"
+  },
+  {
+    "id": "active-voice-follow-03",
+    "scenario": "The editor changes 'The report was reviewed by the team before the decision was made' to 'The team reviewed the report before deciding,' putting the sentence's subject back in the position of performing the action, since the reviewer isn't obscure or irrelevant here.",
+    "expected": "follow"
+  },
+  {
+    "id": "consistent-voice-follow-04",
+    "scenario": "A blog post addresses the reader as 'you' throughout the introduction, body, and conclusion, and uses the term 'dashboard' every time it refers to that screen instead of alternating with 'panel' or 'console.'",
+    "expected": "follow"
+  },
+  {
+    "id": "ai-tell-follow-05",
+    "scenario": "The writer cuts 'In today's fast-paced world, it is important to note that businesses must delve into automation' and replaces it with 'Manual invoice entry costs our support team six hours a week; automation removes that.'",
+    "expected": "follow"
+  },
+  {
+    "id": "prepublish-checklist-follow-06",
+    "scenario": "Before marking a post ready, the editor reads it aloud, catches two sentences that trip on delivery, rewrites them, and re-checks the whole draft against the filler, hedging, active-voice, and AI-tell criteria plus the guardrails' plain-language and QA gates.",
+    "expected": "follow"
+  },
+  {
+    "id": "plain-language-violates-01",
+    "scenario": "A drafter leaves 'Leverage our synergistic, cross-functional paradigm to actualize your operational objectives' in the published post, using dense jargon that a general reader in the target audience would not recognize and never defining any of the terms.",
+    "expected": "violates",
+    "violates_gate": "1. Plain-language self-edit gate"
+  },
+  {
+    "id": "filler-hedging-violates-02",
+    "scenario": "The final draft still reads 'It seems that, in some cases, the decision-making process might somewhat improve results,' keeping every hedging qualifier and the nominalization 'decision-making process' instead of cutting them during the edit pass.",
+    "expected": "violates",
+    "violates_gate": "2. Cutting filler, hedging, and wordiness gate"
+  },
+  {
+    "id": "active-voice-violates-03",
+    "scenario": "Nearly every sentence in the post is written passively as a stylistic habit -- 'Mistakes were made,' 'The feature was shipped,' 'Feedback was gathered' -- even though the people performing each action are known, relevant, and worth naming.",
+    "expected": "violates",
+    "violates_gate": "3. Active-voice preference gate"
+  },
+  {
+    "id": "consistent-voice-violates-04",
+    "scenario": "The post opens in direct second person ('you'll want to check your settings') then drifts into an impersonal third-person register halfway through ('users should verify their configuration'), and alternates between calling the same feature a 'toolbar,' a 'menu bar,' and a 'ribbon' without a deliberate reason.",
+    "expected": "violates",
+    "violates_gate": "4. Consistent voice gate"
+  },
+  {
+    "id": "ai-tell-violates-05",
+    "scenario": "The closing paragraph reads 'In conclusion, it is important to note that as we can see, this solution truly unlocks powerful, game-changing results' -- vague, inflated phrasing that could appear unchanged in a post about any other topic, with no specific numbers or details.",
+    "expected": "violates",
+    "violates_gate": "5. Removing AI-tell phrasing gate"
+  },
+  {
+    "id": "prepublish-checklist-violates-06",
+    "scenario": "The writer marks the post ready for publish without reading it aloud and without re-checking the paragraphs against the filler, hedging, active-voice, consistent-voice, or AI-tell criteria, going straight from first draft to publish.",
+    "expected": "violates",
+    "violates_gate": "6. Pre-publish editing checklist"
+  }
+]
