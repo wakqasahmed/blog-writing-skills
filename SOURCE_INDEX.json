@@ -37,5 +37,7 @@
   "KAHNEMAN-NOBEL-01": "https://www.nobelprize.org/uploads/2018/06/kahnemann-lecture.pdf",
   "GOOGLE-SEOSTART-01": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
   "GOOGLE-TITLELINK-01": "https://developers.google.com/search/docs/appearance/title-link",
-  "GOOGLE-CRAWLLINKS-01": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable"
+  "GOOGLE-CRAWLLINKS-01": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+  "GOOGLE-FAQPAGE-01": "https://developers.google.com/search/docs/appearance/structured-data/faqpage",
+  "GOOGLE-QAPAGE-01": "https://developers.google.com/search/docs/appearance/structured-data/qapage"
 }

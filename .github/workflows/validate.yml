@@ -35,3 +35,4 @@ jobs:
       - run: bash skills/11-data-driven-original-research/eval/run-eval.sh
       - run: bash skills/04-persuasive-copywriting/eval/run-eval.sh
       - run: bash skills/07-seo-on-page-optimization/eval/run-eval.sh
+      - run: bash skills/08-aeo-answer-engine-optimization/eval/run-eval.sh

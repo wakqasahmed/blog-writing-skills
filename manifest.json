@@ -2,7 +2,7 @@
   "name": "blog-writing-skill-pack",
   "version": "1.0.0",
   "last_reviewed": "2026-08-07",
-  "skill_count": 12,
+  "skill_count": 13,
   "skills": [
     "00-blog-writing-guardrails",
     "01-audience-topic-research",
@@ -11,11 +11,12 @@
     "04-persuasive-copywriting",
     "06-storytelling-case-studies",
     "07-seo-on-page-optimization",
+    "08-aeo-answer-engine-optimization",
     "10-eeat-credibility-signals",
     "11-data-driven-original-research",
     "12-technical-b2b-blogging",
     "14-visual-content-accessibility",
     "16-measurement-content-performance"
   ],
-  "source_count": 39
+  "source_count": 41
 }

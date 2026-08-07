@@ -1,0 +1,68 @@
+[
+  {
+    "id": "aeo-001",
+    "scenario": "Writer places a 45-word direct answer to 'What is a featured snippet?' immediately under that question's H2 heading, before any background or story.",
+    "expected": "follow"
+  },
+  {
+    "id": "aeo-002",
+    "scenario": "Writer opens the 'How does caching improve site speed?' section with two paragraphs of history and anecdote, then finally answers the question in paragraph three.",
+    "expected": "violates",
+    "violates_gate": "1. Direct-answer gate"
+  },
+  {
+    "id": "aeo-003",
+    "scenario": "Writer phrases a section heading as 'How does humidity affect bread dough?' instead of 'Humidity and Bread Dough Overview', with the answer paragraph directly beneath it.",
+    "expected": "follow"
+  },
+  {
+    "id": "aeo-004",
+    "scenario": "Writer bolds the text 'Does insurance cover this?' inline within a paragraph instead of using a real heading level, then answers below it.",
+    "expected": "violates",
+    "violates_gate": "2. Question-based header gate"
+  },
+  {
+    "id": "aeo-005",
+    "scenario": "Writer adds FAQPage structured data to a blog post's FAQ section, telling the client it will produce an expandable Q&A rich result in Google Search.",
+    "expected": "violates",
+    "violates_gate": "3. FAQPage schema deprecation gate"
+  },
+  {
+    "id": "aeo-006",
+    "scenario": "Writer leaves pre-existing FAQPage markup in an older post untouched, treating it as inert, and does not add new FAQ sections in hopes of a rich result.",
+    "expected": "follow"
+  },
+  {
+    "id": "aeo-007",
+    "scenario": "Writer marks up a blog's single-answer-per-question FAQ section with QAPage schema because it 'looks like Q&A content'.",
+    "expected": "violates",
+    "violates_gate": "4. QAPage schema boundary gate"
+  },
+  {
+    "id": "aeo-008",
+    "scenario": "Writer correctly withholds QAPage markup from a blog FAQ section, reserving it only for a genuine user-voted forum page elsewhere on the site.",
+    "expected": "follow"
+  },
+  {
+    "id": "aeo-009",
+    "scenario": "Writer tells a client that a specific citation-count threshold is a guaranteed, settled rule for ranking in AI answer engines, without checking the target engine's current documentation.",
+    "expected": "violates",
+    "violates_gate": "5. Evidence-maturity caveat"
+  },
+  {
+    "id": "aeo-010",
+    "scenario": "Before publishing, writer checks that every question-heading's answer paragraph stands alone if read with no other page context, and confirms no new FAQPage markup was added for rich-result purposes.",
+    "expected": "follow"
+  },
+  {
+    "id": "aeo-011",
+    "scenario": "Writer sets a low max-snippet meta tag believing it will reliably force the page out of featured-snippet consideration while still answering the query well.",
+    "expected": "violates",
+    "violates_gate": "1. Direct-answer gate"
+  },
+  {
+    "id": "aeo-012",
+    "scenario": "Writer groups three related follow-up questions readers commonly ask next each under its own question-based heading with its own direct answer, rather than combining them into one long answer.",
+    "expected": "follow"
+  }
+]
