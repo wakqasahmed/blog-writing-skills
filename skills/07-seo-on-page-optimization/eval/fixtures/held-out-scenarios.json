@@ -1,0 +1,85 @@
+[
+  {
+    "id": "title-01",
+    "scenario": "Draft title tag is 'Cats' with a distinct h1 'How to Introduce a New Cat to Your Household', and no other post on the site shares this title.",
+    "expected": "follow"
+  },
+  {
+    "id": "title-02",
+    "scenario": "Draft title tag is 'Best Running Shoes | Best Running Shoes | Best Running Shoes for Beginners' to try to rank for the phrase 'best running shoes'.",
+    "expected": "violates",
+    "violates_gate": "Title tag gate"
+  },
+  {
+    "id": "title-03",
+    "scenario": "Every post on the blog reuses the exact same title tag, 'Blog Post - Acme Inc', regardless of the page's actual content.",
+    "expected": "violates",
+    "violates_gate": "Title tag gate"
+  },
+  {
+    "id": "meta-01",
+    "scenario": "Each page ships a one-sentence meta description summarizing that specific page's unique content, written separately for every post.",
+    "expected": "follow"
+  },
+  {
+    "id": "meta-02",
+    "scenario": "The site leaves meta description blank on every post, letting search engines auto-generate an identical snippet from boilerplate navigation text for all pages.",
+    "expected": "violates",
+    "violates_gate": "Meta description gate"
+  },
+  {
+    "id": "header-01",
+    "scenario": "The post uses one h1 for the title, three h2 section headings, and h3 subheadings nested under the relevant h2s, each heading describing the content that follows it.",
+    "expected": "follow"
+  },
+  {
+    "id": "header-02",
+    "scenario": "The post jumps from an h1 straight to h4 subheadings because the author preferred the smaller visual size, skipping h2 and h3 entirely.",
+    "expected": "violates",
+    "violates_gate": "Header hierarchy gate"
+  },
+  {
+    "id": "header-03",
+    "scenario": "The author inserts extra h2 headings packed with keyword variants that don't correspond to any actual section content, purely to target more search terms.",
+    "expected": "violates",
+    "violates_gate": "Header hierarchy gate"
+  },
+  {
+    "id": "url-01",
+    "scenario": "The published URL is '/pets/cats/introducing-a-new-cat' and lives under the site's existing pets/cats directory alongside related posts.",
+    "expected": "follow"
+  },
+  {
+    "id": "url-02",
+    "scenario": "The published URL is '/blog?post_id=48291' with no descriptive words, and the same content is also reachable at '/archive/48291'.",
+    "expected": "violates",
+    "violates_gate": "URL structure gate"
+  },
+  {
+    "id": "link-01",
+    "scenario": "Internal links use anchor text like 'our guide to cat nutrition' pointing to a real href, and an untrusted user-submitted comment link is marked rel=\"nofollow\".",
+    "expected": "follow"
+  },
+  {
+    "id": "link-02",
+    "scenario": "The post links to further reading using the anchor text 'click here' for every single link, including a JavaScript-only onclick handler with no real href.",
+    "expected": "violates",
+    "violates_gate": "Internal-linking gate"
+  },
+  {
+    "id": "image-01",
+    "scenario": "Each product photo has descriptive alt text explaining what it shows and is saved with a descriptive filename like 'orange-tabby-kitten-playing.jpg', with purely decorative dividers marked so screen readers skip them.",
+    "expected": "follow"
+  },
+  {
+    "id": "image-02",
+    "scenario": "All images are uploaded straight from the camera as 'IMG_4821.jpg' with no alt text at all, including images that convey information central to the article.",
+    "expected": "violates",
+    "violates_gate": "Image optimization gate"
+  },
+  {
+    "id": "qa-01",
+    "scenario": "Before hitting publish, the author checks that the title, meta description, and h1 are unique to this post and that every internal link resolves to a live, canonical URL.",
+    "expected": "follow"
+  }
+]
