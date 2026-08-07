@@ -1,0 +1,80 @@
+[
+  {
+    "id": "code-01",
+    "scenario": "Before publishing the tutorial, the author runs every code sample against the real CLI, captures the actual console output, and pastes that verified output into the post.",
+    "expected": "follow"
+  },
+  {
+    "id": "code-02",
+    "scenario": "The author writes the code sample from memory of an earlier project, never runs it against the actual library, and ships it because it 'looks right'.",
+    "expected": "violates",
+    "violates_gate": "Code-sample verification gate"
+  },
+  {
+    "id": "code-03",
+    "scenario": "The team bumps the library's default timeout flag in production, but leaves the tutorial's code sample and its typed-out sample output unchanged because the post itself 'still reads fine'.",
+    "expected": "violates",
+    "violates_gate": "Code-sample verification gate"
+  },
+  {
+    "id": "version-01",
+    "scenario": "The post states 'as of Terraform 1.8.2 (released March 2026), the moved block supports this syntax' and adds a note that compatibility was last verified on 2026-08-01.",
+    "expected": "follow"
+  },
+  {
+    "id": "version-02",
+    "scenario": "The post claims 'the latest version of the SDK now supports streaming responses' without naming a version number or release date anywhere in the article.",
+    "expected": "violates",
+    "violates_gate": "Version-pinning gate"
+  },
+  {
+    "id": "version-03",
+    "scenario": "A long-lived tutorial parameterizes the routine patch-version tag as a placeholder, while keeping the specific major version number explicit where the claim depends on it.",
+    "expected": "follow"
+  },
+  {
+    "id": "b2b-01",
+    "scenario": "The post includes an implementation walkthrough for the engineer, a total-cost-of-ownership section for the budget holder, and a day-to-day workflow summary for the end user, each self-contained.",
+    "expected": "follow"
+  },
+  {
+    "id": "b2b-02",
+    "scenario": "The post is written entirely as a deep implementation walkthrough for the hands-on engineer, with no mention of cost, risk, or effort for whoever approves the purchase.",
+    "expected": "violates",
+    "violates_gate": "Multi-stakeholder B2B buying-committee gate"
+  },
+  {
+    "id": "b2b-03",
+    "scenario": "The author assumes the technical evaluator reading the post will personally relay every nuance of the argument to the budget-holding VP, so the post never restates the core claim in terms a non-technical reader could act on.",
+    "expected": "violates",
+    "violates_gate": "Multi-stakeholder B2B buying-committee gate"
+  },
+  {
+    "id": "vendor-01",
+    "scenario": "The post claims 'our API is 3x faster than Competitor X' and includes the exact versions compared, the hardware/environment used, and the date the benchmark was run.",
+    "expected": "follow"
+  },
+  {
+    "id": "vendor-02",
+    "scenario": "The post asserts 'we are the only platform that supports multi-region failover' with no benchmark, no methodology, and no documentation the author could produce if challenged.",
+    "expected": "violates",
+    "violates_gate": "Vendor-superiority substantiation gate"
+  },
+  {
+    "id": "vendor-03",
+    "scenario": "The post repeats a competitor's own marketing claim about their uptime SLA as an established fact, without attributing it to the competitor or independently verifying it.",
+    "expected": "violates",
+    "violates_gate": "Vendor-superiority substantiation gate"
+  },
+  {
+    "id": "qa-01",
+    "scenario": "Before publishing, the editor confirms every code sample was run against the stated version, every version claim carries a date, every stakeholder role is addressed, and every superiority claim has a documented basis.",
+    "expected": "follow"
+  },
+  {
+    "id": "qa-02",
+    "scenario": "The post goes live with an unverified benchmark claim and a code sample that was never executed, because the writer skipped the pre-publish QA pass to hit a launch deadline.",
+    "expected": "violates",
+    "violates_gate": "Pre-publish QA gate"
+  }
+]
