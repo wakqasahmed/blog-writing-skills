@@ -2,6 +2,19 @@
   "name": "blog-writing-skills",
   "skills": [
     "./skills/00-blog-writing-guardrails",
-    "./skills/13-editing-style-voice"
+    "./skills/01-audience-topic-research",
+    "./skills/02-headlines-hooks",
+    "./skills/03-structure-scannability",
+    "./skills/04-persuasive-copywriting",
+    "./skills/05-educational-clarity-writing",
+    "./skills/06-storytelling-case-studies",
+    "./skills/07-seo-on-page-optimization",
+    "./skills/08-aeo-answer-engine-optimization",
+    "./skills/10-eeat-credibility-signals",
+    "./skills/11-data-driven-original-research",
+    "./skills/12-technical-b2b-blogging",
+    "./skills/13-editing-style-voice",
+    "./skills/14-visual-content-accessibility",
+    "./skills/16-measurement-content-performance"
   ]
 }
