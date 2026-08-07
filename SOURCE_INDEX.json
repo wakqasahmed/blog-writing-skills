@@ -7,6 +7,12 @@
   "W3C-WCAG-01": "https://www.w3.org/WAI/WCAG22/quickref/",
   "FTC-ADSUB-01": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
   "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language",
+  "NNGROUP-FPATTERN-01": "https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/",
+  "NNGROUP-LAYERCAKE-01": "https://www.nngroup.com/articles/layer-cake-pattern-scanning/",
+  "BACKLINKO-CTR-01": "https://backlinko.com/google-ctr-stats",
+  "NNG-FPATTERN-01": "https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content-discovered/",
+  "NNG-SCANNING-01": "https://www.nngroup.com/articles/how-little-do-users-read/",
+  "UPWORTHY-ARCHIVE-01": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8329003/",
   "GOOGLE-HSW-01": "https://www.google.com/search/howsearchworks/how-search-works/ranking-results/",
   "GOOGLE-SEOSTARTER-01": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
   "AHREFS-KWRESEARCH-01": "https://ahrefs.com/seo/keyword-research"
