@@ -16,6 +16,13 @@
   "GOOGLE-HSW-01": "https://www.google.com/search/howsearchworks/how-search-works/ranking-results/",
   "GOOGLE-SEOSTARTER-01": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
   "AHREFS-KWRESEARCH-01": "https://ahrefs.com/seo/keyword-research",
+  "W3C-IMGALT-01": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+  "W3C-CONTRAST-01": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+  "W3C-NONTEXTCONTRAST-01": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+  "W3C-MEDIA-01": "https://www.w3.org/WAI/media/av/",
+  "W3C-CAPTIONS-01": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html",
+  "W3C-AUDIODESC-01": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html",
+  "JOHARI-PEEKING-01": "https://arxiv.org/abs/1512.04922",
   "GOOGLE-QRG-01": "https://guidelines.raterhub.com/searchqualityevaluatorguidelines.pdf",
   "TRUSTPROJECT-INDICATORS-01": "https://thetrustproject.org/trust-indicators/",
   "SCHEMAORG-AUTHOR-01": "https://schema.org/author"
