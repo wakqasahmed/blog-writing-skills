@@ -57,6 +57,12 @@ class EvaluateFixtureTests(unittest.TestCase):
         self.assertFalse(passed)
         self.assertIn("FAIL", message)
 
+    def test_mixed_case_and_whitespace_classification_still_passes(self):
+        fixture = _fixture("f-06", "follow")
+        passed, message = self._run(fixture, '{"classification": "Follow ", "gate": null}')
+        self.assertTrue(passed)
+        self.assertIn("PASS", message)
+
     def test_malformed_json_response_is_failure_not_crash(self):
         fixture = _fixture("f-03", "follow")
         passed, message = self._run(fixture, "not valid json at all")
@@ -81,12 +87,25 @@ class EvaluateFixtureTests(unittest.TestCase):
 
 
 class GateMatchesTests(unittest.TestCase):
-    def test_substring_either_direction_matches(self):
-        self.assertTrue(run_behavioral_eval.gate_matches("verifiable specifics gate", "Case-study structure and verifiable specifics gate".lower()))
-        self.assertTrue(run_behavioral_eval.gate_matches("Case-study structure gate", "structure"))
+    def test_paraphrase_matches(self):
+        self.assertTrue(
+            run_behavioral_eval.gate_matches(
+                "verifiable specifics gate", "Case-study structure and verifiable specifics gate".lower()
+            )
+        )
 
     def test_no_match(self):
         self.assertFalse(run_behavioral_eval.gate_matches("unrelated gate", "self-containment"))
+
+    def test_clearly_wrong_gate_name_fails(self):
+        self.assertFalse(
+            run_behavioral_eval.gate_matches("statistic citation density", "customer as hero framing")
+        )
+
+    def test_trivial_short_string_no_longer_wrongly_matches(self):
+        # Old substring logic: "a" in "a b c" is True. New token-overlap logic
+        # excludes single-letter stopwords, so this no longer trivially matches.
+        self.assertFalse(run_behavioral_eval.gate_matches("a", "a b c"))
 
     def test_none_values_do_not_match(self):
         self.assertFalse(run_behavioral_eval.gate_matches(None, "self-containment"))
@@ -94,22 +113,41 @@ class GateMatchesTests(unittest.TestCase):
 
 
 class MainSkipTests(unittest.TestCase):
+    def _run_main_with_env(self, tmp, env_overrides):
+        skill_dir = Path(tmp)
+        (skill_dir / "eval" / "fixtures").mkdir(parents=True)
+        (skill_dir / "SKILL.md").write_text("guidance")
+        (skill_dir / "eval" / "fixtures" / "held-out-scenarios.json").write_text("[]")
+
+        env = dict(os.environ)
+        for key in ("OCR_LLM_URL", "OCR_LLM_MODEL", "OCR_LLM_AUTH_TOKEN"):
+            env.pop(key, None)
+        env.update(env_overrides)
+        sys_argv_backup = sys.argv
+        try:
+            with mock.patch.dict(os.environ, env, clear=True):
+                sys.argv = ["run-behavioral-eval.py", str(skill_dir)]
+                return run_behavioral_eval.main()
+        finally:
+            sys.argv = sys_argv_backup
+
     def test_main_skips_without_credentials(self):
         with tempfile.TemporaryDirectory() as tmp:
-            skill_dir = Path(tmp)
-            (skill_dir / "eval" / "fixtures").mkdir(parents=True)
-            (skill_dir / "SKILL.md").write_text("guidance")
-            (skill_dir / "eval" / "fixtures" / "held-out-scenarios.json").write_text("[]")
+            exit_code = self._run_main_with_env(tmp, {})
+            self.assertEqual(exit_code, 0)
 
-            env = dict(os.environ)
-            env.pop("OCR_LLM_AUTH_TOKEN", None)
-            sys_argv_backup = sys.argv
-            with mock.patch.dict(os.environ, env, clear=True):
-                try:
-                    sys.argv = ["run-behavioral-eval.py", str(skill_dir)]
-                    exit_code = run_behavioral_eval.main()
-                finally:
-                    sys.argv = sys_argv_backup
+    def test_main_skips_when_token_present_but_url_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            exit_code = self._run_main_with_env(
+                tmp, {"OCR_LLM_AUTH_TOKEN": "x", "OCR_LLM_MODEL": "some-model"}
+            )
+            self.assertEqual(exit_code, 0)
+
+    def test_main_skips_when_token_present_but_model_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            exit_code = self._run_main_with_env(
+                tmp, {"OCR_LLM_AUTH_TOKEN": "x", "OCR_LLM_URL": "http://fake"}
+            )
             self.assertEqual(exit_code, 0)
 
 

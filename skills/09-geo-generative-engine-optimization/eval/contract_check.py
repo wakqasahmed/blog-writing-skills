@@ -66,17 +66,19 @@ def main() -> None:
         if not isinstance(scenarios, list) or not scenarios:
             errors.append("fixtures file must be a non-empty JSON array")
         else:
-            should_follow = [s for s in scenarios if s.get("type") == "should_follow"]
-            would_violate = [s for s in scenarios if s.get("type") == "would_violate"]
+            should_follow = [s for s in scenarios if s.get("expected") == "follow"]
+            would_violate = [s for s in scenarios if s.get("expected") == "violates"]
             if len(should_follow) < 5:
                 errors.append(f"expected >=5 should_follow scenarios, found {len(should_follow)}")
             if len(would_violate) < 5:
                 errors.append(f"expected >=5 would_violate scenarios, found {len(would_violate)}")
-            required_keys = {"id", "type", "gate", "scenario", "expected_guidance"}
+            required_keys = {"id", "expected", "scenario", "expected_guidance"}
             for scenario in scenarios:
                 missing_keys = required_keys - scenario.keys()
                 if missing_keys:
                     errors.append(f"scenario {scenario.get('id', '?')} missing keys: {sorted(missing_keys)}")
+                if scenario.get("expected") == "violates" and "violates_gate" not in scenario:
+                    errors.append(f"scenario {scenario.get('id', '?')} missing 'violates_gate'")
 
     if errors:
         fail(errors)

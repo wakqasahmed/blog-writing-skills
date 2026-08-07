@@ -1,85 +1,65 @@
 [
   {
     "id": "follow-01",
-    "type": "should_follow",
     "expected": "follow",
-    "gate": "1-self-containment",
     "scenario": "A post about 'how long does cold brew last in the fridge' opens its answer section with: 'Cold brew concentrate stays fresh in the refrigerator for 7 to 10 days when stored in an airtight container.' before any supporting narrative.",
     "expected_guidance": "Compliant: the core-question passage is a direct, self-contained statement that does not depend on surrounding sentences."
   },
   {
     "id": "follow-02",
-    "type": "should_follow",
     "expected": "follow",
-    "gate": "2-statistic-citation-density",
     "scenario": "A post claims 'switching to a weekly newsletter increased open rates by 22%' and links inline to the internal analytics report backing the number.",
     "expected_guidance": "Compliant: statistic is specific, sourced, and verifiable inline, satisfying both the GEO statistic gate and the guardrails accuracy gate."
   },
   {
     "id": "follow-03",
-    "type": "should_follow",
     "expected": "follow",
-    "gate": "3-structured-quotable-claims",
     "scenario": "A pricing comparison post lists the recommended plan first in a comparison table, states the exact monthly price, and stamps the page with a 'last updated' date matching the current pricing.",
     "expected_guidance": "Compliant: current price, recency stamp, and lead position all present, matching the decisive citation factors identified in the cited research."
   },
   {
     "id": "follow-04",
-    "type": "should_follow",
     "expected": "follow",
-    "gate": "4-traffic-impact-disclosure",
     "scenario": "A GEO project brief for a stakeholder states: 'This work aims to preserve citation visibility inside AI Overviews given the documented CTR decline for top-ranking pages; it is not expected to grow click volume beyond current levels.'",
     "expected_guidance": "Compliant: frames GEO as visibility preservation, not a click-growth promise, consistent with the cited CTR-decline data."
   },
   {
     "id": "follow-05",
-    "type": "should_follow",
     "expected": "follow",
-    "gate": "0-evidence-caveat",
     "scenario": "An internal GEO playbook states: 'These tactics are drawn from controlled research studies and may not transfer identically to our domain or to every answer engine; we will A/B test before rolling out broadly.'",
     "expected_guidance": "Compliant: treats GEO tactics as a hypothesis to validate, not a guaranteed outcome, matching the required evidence-quality caveat."
   },
   {
     "id": "violate-01",
-    "type": "would_violate",
     "expected": "violates",
-    "gate": "1-self-containment",
     "violates_gate": "1-self-containment",
     "scenario": "A post's answer to 'how long does cold brew last' is: 'It depends on the factors discussed above, but generally not very long once you factor in what we mentioned.' with no standalone fact.",
     "expected_guidance": "Violation: the passage depends entirely on preceding context and contains no extractable, self-contained answer."
   },
   {
     "id": "violate-02",
-    "type": "would_violate",
     "expected": "violates",
-    "gate": "2-statistic-citation-density",
     "violates_gate": "2-statistic-citation-density",
     "scenario": "A post states 'most experts agree this triples engagement' with no source, no link, and no specific figure attributable to a study.",
     "expected_guidance": "Violation: unsourced, unverifiable statistic; also fails the guardrails accuracy and claims-substantiation gate."
   },
   {
     "id": "violate-03",
-    "type": "would_violate",
     "expected": "violates",
-    "gate": "3-structured-quotable-claims",
     "violates_gate": "3-structured-quotable-claims",
     "scenario": "A pricing page still shows a 'Starting at $19/month' figure and a 'last updated' stamp from fourteen months ago, after the price changed twice since then.",
     "expected_guidance": "Violation: stale price and timestamp contradict the recency factor and risk citing an answer engine to outdated information."
   },
   {
     "id": "violate-04",
-    "type": "would_violate",
     "expected": "violates",
-    "gate": "4-traffic-impact-disclosure",
     "violates_gate": "4-traffic-impact-disclosure",
     "scenario": "A GEO project brief promises the stakeholder: 'Implementing these GEO tactics will grow organic traffic by at least 20% next quarter.'",
     "expected_guidance": "Violation: promises a guaranteed traffic outcome the cited research does not support, and contradicts documented CTR-decline data."
   },
   {
     "id": "violate-05",
-    "type": "would_violate",
     "expected": "violates",
-    "gate": "0-evidence-caveat",
     "violates_gate": "0-evidence-caveat",
     "scenario": "A team-wide GEO guide states: 'These four tactics are proven to work on every AI answer engine and should be applied identically across all content without further testing.'",
     "expected_guidance": "Violation: presents heterogeneous, model-dependent research findings as universal guaranteed outcomes, contradicting the required evidence-quality caveat."

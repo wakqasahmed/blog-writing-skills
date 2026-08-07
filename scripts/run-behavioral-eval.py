@@ -53,12 +53,28 @@ def parse_response(raw: str):
     return parsed["classification"], parsed.get("gate")
 
 
+GATE_STOPWORDS = {"the", "a", "an", "and", "or", "of", "gate", "rule", "check"}
+
+
+def _significant_words(text: str) -> set:
+    words = re.findall(r"[a-z0-9]+", text.lower())
+    return {w for w in words if w not in GATE_STOPWORDS}
+
+
 def gate_matches(actual_gate, expected_gate) -> bool:
     if not actual_gate or not expected_gate:
         return False
-    actual = str(actual_gate).lower()
-    expected = str(expected_gate).lower()
-    return actual in expected or expected in actual
+    actual_words = _significant_words(str(actual_gate))
+    expected_words = _significant_words(str(expected_gate))
+    if not actual_words or not expected_words:
+        return False
+    shorter, longer = (
+        (actual_words, expected_words)
+        if len(actual_words) <= len(expected_words)
+        else (expected_words, actual_words)
+    )
+    overlap = shorter & longer
+    return len(overlap) / len(shorter) >= 0.5
 
 
 def evaluate_fixture(fixture: dict, skill_md: str, url: str, model: str, token: str):
@@ -80,11 +96,13 @@ def evaluate_fixture(fixture: dict, skill_md: str, url: str, model: str, token: 
         return False, f"FAIL {fixture['id']}: could not parse model response as JSON ({exc}): {raw!r}"
 
     expected = fixture["expected"]
-    if classification != expected:
+    normalized_classification = str(classification).strip().lower()
+    normalized_expected = str(expected).strip().lower()
+    if normalized_classification != normalized_expected:
         return False, f"FAIL {fixture['id']}: expected classification {expected!r}, got {classification!r}"
 
     warning = ""
-    if expected == "violates":
+    if normalized_expected == "violates":
         expected_gate = fixture.get("violates_gate")
         if expected_gate and not gate_matches(gate, expected_gate):
             warning = f" (warning: gate {gate!r} does not match expected {expected_gate!r})"
@@ -102,8 +120,13 @@ def main() -> int:
     model = os.environ.get("OCR_LLM_MODEL", "")
     token = os.environ.get("OCR_LLM_AUTH_TOKEN", "")
 
-    if not token:
-        print("SKIP: no LLM credentials available, behavioral eval not run")
+    missing = [
+        name
+        for name, value in (("OCR_LLM_URL", url), ("OCR_LLM_MODEL", model), ("OCR_LLM_AUTH_TOKEN", token))
+        if not value
+    ]
+    if missing:
+        print(f"SKIP: missing env var(s) {', '.join(missing)}, behavioral eval not run")
         return 0
 
     with open(os.path.join(skill_dir, "SKILL.md"), encoding="utf-8") as f:
