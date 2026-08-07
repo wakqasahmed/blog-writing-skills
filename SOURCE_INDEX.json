@@ -41,5 +41,7 @@
   "GOOGLE-FAQPAGE-01": "https://developers.google.com/search/docs/appearance/structured-data/faqpage",
   "GOOGLE-QAPAGE-01": "https://developers.google.com/search/docs/appearance/structured-data/qapage",
   "NAVY-READABILITY-01": "https://archive.org/details/DTIC_ADA006655",
-  "SWELLER-COGLOAD-01": "https://andymatuschak.org/files/papers/Sweller%20-%201988%20-%20Cognitive%20load%20during%20problem%20solving.pdf"
+  "SWELLER-COGLOAD-01": "https://andymatuschak.org/files/papers/Sweller%20-%201988%20-%20Cognitive%20load%20during%20problem%20solving.pdf",
+  "PURDUEOWL-ACTIVEVOICE-01": "https://owl.purdue.edu/owl/general_writing/academic_writing/active_and_passive_voice/index.html",
+  "PURDUEOWL-CONCISE-01": "https://owl.purdue.edu/owl/general_writing/academic_writing/conciseness/index.html"
 }

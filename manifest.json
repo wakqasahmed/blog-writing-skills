@@ -2,7 +2,7 @@
   "name": "blog-writing-skill-pack",
   "version": "1.0.0",
   "last_reviewed": "2026-08-07",
-  "skill_count": 14,
+  "skill_count": 15,
   "skills": [
     "00-blog-writing-guardrails",
     "01-audience-topic-research",
@@ -16,8 +16,9 @@
     "10-eeat-credibility-signals",
     "11-data-driven-original-research",
     "12-technical-b2b-blogging",
+    "13-editing-style-voice",
     "14-visual-content-accessibility",
     "16-measurement-content-performance"
   ],
-  "source_count": 43
+  "source_count": 45
 }
