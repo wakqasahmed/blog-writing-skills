@@ -6,5 +6,11 @@
   "GOOGLE-SCHEMA-01": "https://developers.google.com/search/docs/appearance/structured-data/article",
   "W3C-WCAG-01": "https://www.w3.org/WAI/WCAG22/quickref/",
   "FTC-ADSUB-01": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
-  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language"
+  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language",
+  "W3C-IMGALT-01": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+  "W3C-CONTRAST-01": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+  "W3C-NONTEXTCONTRAST-01": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+  "W3C-MEDIA-01": "https://www.w3.org/WAI/media/av/",
+  "W3C-CAPTIONS-01": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html",
+  "W3C-AUDIODESC-01": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html"
 }

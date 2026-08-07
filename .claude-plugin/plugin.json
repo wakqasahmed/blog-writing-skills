@@ -1,6 +1,7 @@
 {
   "name": "blog-writing-skills",
   "skills": [
-    "./skills/00-blog-writing-guardrails"
+    "./skills/00-blog-writing-guardrails",
+    "./skills/14-visual-content-accessibility"
   ]
 }
