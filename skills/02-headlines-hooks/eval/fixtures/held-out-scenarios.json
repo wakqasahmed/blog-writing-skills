@@ -1,0 +1,85 @@
+[
+  {
+    "id": "follow-01",
+    "scenario": "Drafting a title tag for a post about switching CDN providers: writer proposes 'How We Cut CDN Costs 40% Without Losing Speed' (52 characters), keeping the outcome front-loaded within the first 60 characters.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-02",
+    "scenario": "A post about a failed product launch is titled 'Why Our Product Launch Failed (And What We'd Do Differently)' — negative framing is kept because the content is genuinely a postmortem, not forced into false positivity.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-03",
+    "scenario": "Writer considers 'What Is Server-Side Rendering?' as a headline only because the entire post is structured to directly answer that exact question, and the opening paragraph gives the answer immediately rather than teasing it.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-04",
+    "scenario": "Opening paragraph of a post states the core recommendation ('Use exponential backoff with jitter for retries') in the first sentence, before any anecdote about the incident that prompted the post.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-05",
+    "scenario": "Before publishing, the editor runs a title-testing tool across three headline variants for a high-traffic cornerstone article and picks the winner based on measured reader response instead of gut feeling.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-06",
+    "scenario": "Pre-publish checklist confirms the finalized title is 48 characters, matches both the page's <title> tag and the Article schema headline field exactly, and previews without truncation in a SERP snippet tool.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-07",
+    "scenario": "The hook for a data-pipeline outage post opens with the concrete stakes ('This bug silently dropped 2% of orders for six days') rather than a vague teaser, giving the reader a specific reason to keep reading.",
+    "expected": "follow"
+  },
+  {
+    "id": "violates-01",
+    "scenario": "Editor ships the headline 'Everything You Need to Know About Kubernetes Networking, Security, Cost Optimization, and Multi-Cluster Federation in One Guide' at 128 characters with the key topic word buried near the end.",
+    "expected": "violates",
+    "violates_gate": "Title-length gate"
+  },
+  {
+    "id": "violates-02",
+    "scenario": "A post documenting a security breach and data loss is retitled to 'Our Exciting Journey to Better Security!' to sound more upbeat, even though the actual content is a critical incident report.",
+    "expected": "violates",
+    "violates_gate": "Sentiment and honesty gate"
+  },
+  {
+    "id": "violates-03",
+    "scenario": "Marketing headline reads 'The #1 Proven Way to Double Your Traffic' but the author has no data, case study, or benchmark that could substantiate 'proven' or '#1' if asked.",
+    "expected": "violates",
+    "violates_gate": "Sentiment and honesty gate"
+  },
+  {
+    "id": "violates-04",
+    "scenario": "Writer defaults to 'Is This the Best JavaScript Framework?' purely because question headlines feel clickable, then spends three paragraphs of buildup before ever answering the question.",
+    "expected": "violates",
+    "violates_gate": "Question-headline gate"
+  },
+  {
+    "id": "violates-05",
+    "scenario": "A tutorial's opening section spends four paragraphs on the author's personal backstory and a scene-setting anecdote about their weekend before mentioning what the post actually teaches.",
+    "expected": "violates",
+    "violates_gate": "Scan-first structure gate"
+  },
+  {
+    "id": "violates-06",
+    "scenario": "The hook reads 'You won't believe what happened next in our deployment...' with no concrete detail about the problem, stakes, or outcome anywhere in the opening paragraph.",
+    "expected": "violates",
+    "violates_gate": "Hook-substance gate"
+  },
+  {
+    "id": "violates-07",
+    "scenario": "Team ships a major campaign headline straight from a single writer's preference, skipping the available A/B testing tool and the fallback length/sentiment/question heuristics entirely, despite having both testing infrastructure and time.",
+    "expected": "violates",
+    "violates_gate": "Test-before-you-trust-your-instinct gate"
+  },
+  {
+    "id": "violates-08",
+    "scenario": "Post goes live with a title tag that differs from the Article structured-data headline field, and no one checked whether the title renders truncated in search preview tools before publishing.",
+    "expected": "violates",
+    "violates_gate": "Pre-publish QA gate"
+  }
+]

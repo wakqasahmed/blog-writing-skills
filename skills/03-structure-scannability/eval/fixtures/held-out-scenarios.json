@@ -1,0 +1,74 @@
+[
+  {
+    "id": "follow-01",
+    "scenario": "Drafting a 'How to reduce cart abandonment' post. The writer opens paragraph one with the single biggest fix and its expected impact, then spends the rest of the intro on the second-biggest fix, before any background on why carts get abandoned.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-02",
+    "scenario": "Outlining a comparison post 'Postgres vs MySQL for startups'. The writer plans real H2 subheadings like 'Postgres wins on JSON querying' and 'MySQL wins on replication simplicity', each leading with the verdict word, so a reader scanning only headings gets the comparison's shape.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-03",
+    "scenario": "Writing a post answering 'What is a content moat?'. The writer adds a 3-sentence summary box right under the H1 that states the direct definition and why it matters, with no teaser language withholding the answer.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-04",
+    "scenario": "Editing a draft that currently describes five migration steps as one long comma-separated sentence. The writer converts them into a numbered list, one step per line, so each step reads clearly on its own.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-05",
+    "scenario": "Before publishing, the writer does a final pass reading only the post's headings, its TL;DR box, and the bolded phrases in each paragraph, and confirms that pass alone conveys the article's core recommendation.",
+    "expected": "follow"
+  },
+  {
+    "id": "follow-06",
+    "scenario": "Formatting a pricing-tiers section that compares four plans across cost, seats, and support level. The writer builds a table with plans as rows and those three attributes as columns instead of writing four separate paragraphs.",
+    "expected": "follow"
+  },
+  {
+    "id": "violates-01",
+    "scenario": "A post about a new API rate-limit change spends its first four paragraphs on the company's history and the general problem of scaling APIs, only revealing the actual new limit and how to adapt in paragraph five.",
+    "expected": "violates",
+    "violates_gate": "1. Inverted-pyramid gate"
+  },
+  {
+    "id": "violates-02",
+    "scenario": "The writer formats section labels as bold, larger paragraph text ('**Why this matters**') directly inline in the flowing prose instead of using a real <h2>/<h3> heading element, to save time on styling.",
+    "expected": "violates",
+    "violates_gate": "2. Heading and layer-cake structure gate"
+  },
+  {
+    "id": "violates-03",
+    "scenario": "A post titled 'What is zero-trust security?' opens its summary box with 'Curious what zero-trust really means? Keep reading to find out...' and never states the actual definition until three sections later.",
+    "expected": "violates",
+    "violates_gate": "3. TL;DR and summary-box gate"
+  },
+  {
+    "id": "violates-04",
+    "scenario": "To make a paragraph stand out, the writer bolds the entire three-sentence paragraph rather than just the one key number a scanning reader needs, so nothing in the passage is visually distinguishable from anything else.",
+    "expected": "violates",
+    "violates_gate": "4. Bold, list, and table gate"
+  },
+  {
+    "id": "violates-05",
+    "scenario": "A resources section lists five external links as 'click here', 'click here', 'read more', 'this article', and 'here', instead of describing what each destination actually contains.",
+    "expected": "violates",
+    "violates_gate": "4. Bold, list, and table gate"
+  },
+  {
+    "id": "violates-06",
+    "scenario": "The writer skips the pre-publish scannability pass entirely and instead adds two more paragraphs of prose to 'make sure the point comes across', without checking whether the headings and TL;DR alone already convey the value.",
+    "expected": "violates",
+    "violates_gate": "5. Pre-publish scannability check"
+  },
+  {
+    "id": "violates-07",
+    "scenario": "A troubleshooting guide compares five error codes and their causes as one dense paragraph of comma-separated clauses rather than a table or list, forcing the reader to parse prose to find the code that matches their error.",
+    "expected": "violates",
+    "violates_gate": "4. Bold, list, and table gate"
+  }
+]
