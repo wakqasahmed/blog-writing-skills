@@ -6,5 +6,8 @@
   "GOOGLE-SCHEMA-01": "https://developers.google.com/search/docs/appearance/structured-data/article",
   "W3C-WCAG-01": "https://www.w3.org/WAI/WCAG22/quickref/",
   "FTC-ADSUB-01": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
-  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language"
+  "DIGITALGOV-PLAIN-01": "https://digital.gov/guides/plain-language",
+  "ARISTOTLE-RHETORIC-01": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0060:book=1:chapter=2",
+  "CIALDINI-INFLUENCE-01": "https://www.influenceatwork.com/7-principles-of-persuasion/",
+  "KAHNEMAN-NOBEL-01": "https://www.nobelprize.org/uploads/2018/06/kahnemann-lecture.pdf"
 }
