@@ -5,15 +5,53 @@ import os
 import re
 import sys
 import json
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 errors = []
 warnings = []
 
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+)
+URL_TIMEOUT_SECONDS = 8
+HEAD_FALLBACK_STATUSES = {403, 405, 501}
+
+
+def fetch_status(url, method):
+    req = urllib.request.Request(url, method=method, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(req, timeout=URL_TIMEOUT_SECONDS) as resp:
+            return resp.status
+    except urllib.error.HTTPError as e:
+        return e.code
+
+
+def check_urls(index):
+    for source_id, url in sorted(index.items()):
+        try:
+            status = fetch_status(url, "HEAD")
+            if status in HEAD_FALLBACK_STATUSES:
+                status = fetch_status(url, "GET")
+            ok = 200 <= status < 400
+            print(f"  {source_id}: {status}{'' if ok else ' (FAILED)'}")
+            if not ok:
+                errors.append(f"{source_id} [{url}] returned HTTP {status}")
+        except Exception as e:
+            print(f"  {source_id}: ERROR ({e})")
+            errors.append(f"{source_id} [{url}] request failed: {e}")
+
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--check-urls",
+        action="store_true",
+        help="fetch every registered source URL and fail on non-2xx/3xx responses (network required)",
+    )
     args = parser.parse_args()
 
     index = json.loads((root / "SOURCE_INDEX.json").read_text())
@@ -52,6 +90,10 @@ def main():
             errors.append(f"{path.relative_to(root)} last reviewed {age} days ago (>365); sources must be re-verified")
         elif age > 180:
             warnings.append(f"{path.relative_to(root)} last reviewed {age} days ago; re-verify its sources")
+
+    if args.check_urls:
+        print(f"checking {len(index)} registered URLs...")
+        check_urls(index)
 
     for warning in warnings:
         prefix = "::warning::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: "
