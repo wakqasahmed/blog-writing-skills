@@ -84,4 +84,12 @@ source_index = json.loads((root / "SOURCE_INDEX.json").read_text())
 if manifest.get("source_count") != len(source_index):
     raise SystemExit(f"manifest.json source_count is {manifest.get('source_count')}, registry has {len(source_index)}")
 
+duplicate_urls = duplicates(list(source_index.values()))
+if duplicate_urls:
+    details = [
+        f"{url} ({', '.join(sorted(sid for sid, u in source_index.items() if u == url))})"
+        for url in duplicate_urls
+    ]
+    raise SystemExit("SOURCE_INDEX.json has duplicate URLs under multiple IDs: " + "; ".join(details))
+
 print(f"validated {len(skills)} plugin skill paths")
