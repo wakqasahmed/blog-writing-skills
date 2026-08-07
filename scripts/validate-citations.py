@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import datetime
 import os
 import re
@@ -10,47 +11,58 @@ root = Path(__file__).resolve().parents[1]
 errors = []
 warnings = []
 
-index = json.loads((root / "SOURCE_INDEX.json").read_text())
-table_ids = set(re.findall(r"^\| `([A-Z0-9-]+)` \|", (root / "SOURCES.md").read_text(), re.M))
 
-if set(index) != table_ids:
-    errors.append(
-        f"SOURCE_INDEX.json and SOURCES.md disagree: only in index {sorted(set(index) - table_ids)}, "
-        f"only in table {sorted(table_ids - set(index))}"
-    )
+def main():
+    parser = argparse.ArgumentParser()
+    args = parser.parse_args()
 
-skill_files = sorted(root.glob("skills/*/SKILL.md"))
+    index = json.loads((root / "SOURCE_INDEX.json").read_text())
+    table_ids = set(re.findall(r"^\| `([A-Z0-9-]+)` \|", (root / "SOURCES.md").read_text(), re.M))
 
-used = set()
-for path in skill_files:
-    unregistered = set()
-    for cite in re.findall(r"\[([A-Z][A-Z0-9-]*-\d+)\]", path.read_text()):
-        used.add(cite)
-        if cite not in index:
-            unregistered.add(cite)
-    for cite in sorted(unregistered):
-        errors.append(f"{path.relative_to(root)} cites unregistered ID [{cite}]")
+    if set(index) != table_ids:
+        errors.append(
+            f"SOURCE_INDEX.json and SOURCES.md disagree: only in index {sorted(set(index) - table_ids)}, "
+            f"only in table {sorted(table_ids - set(index))}"
+        )
 
-unused = sorted(set(index) - used)
-if unused:
-    errors.append(f"registered but never cited: {unused}")
+    skill_files = sorted(root.glob("skills/*/SKILL.md"))
 
-today = datetime.date.today()
-for path in [root / "SOURCES.md", *skill_files]:
-    match = re.search(r"^(?:last_reviewed|Last reviewed): (\d{4}-\d{2}-\d{2})$", path.read_text(), re.M)
-    if not match:
-        errors.append(f"{path.relative_to(root)} has no last_reviewed date")
-        continue
-    age = (today - datetime.date.fromisoformat(match.group(1))).days
-    if age > 180:
-        warnings.append(f"{path.relative_to(root)} last reviewed {age} days ago; re-verify its sources")
+    used = set()
+    for path in skill_files:
+        unregistered = set()
+        for cite in re.findall(r"\[([A-Z][A-Z0-9-]*-\d+)\]", path.read_text()):
+            used.add(cite)
+            if cite not in index:
+                unregistered.add(cite)
+        for cite in sorted(unregistered):
+            errors.append(f"{path.relative_to(root)} cites unregistered ID [{cite}]")
 
-for warning in warnings:
-    prefix = "::warning::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: "
-    print(f"{prefix}{warning}")
-if errors:
-    for error in errors:
-        print(f"ERROR: {error}", file=sys.stderr)
-    sys.exit(1)
+    unused = sorted(set(index) - used)
+    if unused:
+        errors.append(f"registered but never cited: {unused}")
 
-print(f"validated {len(used)} cited source IDs across {len(skill_files)} skills")
+    today = datetime.date.today()
+    for path in [root / "SOURCES.md", *skill_files]:
+        match = re.search(r"^(?:last_reviewed|Last reviewed): (\d{4}-\d{2}-\d{2})$", path.read_text(), re.M)
+        if not match:
+            errors.append(f"{path.relative_to(root)} has no last_reviewed date")
+            continue
+        age = (today - datetime.date.fromisoformat(match.group(1))).days
+        if age > 365:
+            errors.append(f"{path.relative_to(root)} last reviewed {age} days ago (>365); sources must be re-verified")
+        elif age > 180:
+            warnings.append(f"{path.relative_to(root)} last reviewed {age} days ago; re-verify its sources")
+
+    for warning in warnings:
+        prefix = "::warning::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: "
+        print(f"{prefix}{warning}")
+    if errors:
+        for error in errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"validated {len(used)} cited source IDs across {len(skill_files)} skills")
+
+
+if __name__ == "__main__":
+    main()
